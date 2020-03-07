@@ -4,7 +4,7 @@
     background-color: #222629;
     color: #ffffff;
     text-align: center;
-    padding: 15px;
+    padding: 15px 0 10px 0;
   }
 
   h1 {
@@ -17,13 +17,6 @@
   }
 
   h2 {
-    font-weight: 400;
-    font-size: 18px;
-
-    @include breakpoint($break-medium) {
-      font-size: 25px;
-    }
-
     line-height: 110%;
     color: #ffffff;
     text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
@@ -33,6 +26,7 @@
     margin: 0;
     width: 100%;
     overflow: hidden;
+    margin-bottom: -20px;
   }
 
   .slide-caption {
@@ -42,28 +36,54 @@
     margin: 0;
     padding: 25px 20px 30px;
     position: absolute;
-    width: 30%;
     z-index: 0;
-    top: 50%;
+    top: 22%;
+    width: 50%;
+
+    @include breakpoint($break-small) {
+      top: 50%;
+      width: 30%;
+    }
+
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    visibility: hidden;
-
-    @include breakpoint($break-medium) {
-      visibility: visible;
-    }
 
     h2 {
       word-wrap: break-word;
-      margin: 0 0 16px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 12px;
+
+      @include breakpoint($break-small) {
+        font-size: 30px;
+        line-height: inherit;
+        margin: 0 0 16px;
+      }
+
+      margin: 0 0 2px;
+      margin-bottom: 2px;
     }
 
-    p {
-      color: #ffffff;
-      margin: 0 0 17px;
-      text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
-      letter-spacing: 0.5px;
+    .flex-btn {
+      font-size: 75% !important;
+
+      @include breakpoint($break-small) {
+        font-size: 100%;
+      }
     }
+  }
+
+  p {
+    color: #ffffff;
+    margin: 0 0 17px;
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+    display: none;
+
+    @include breakpoint($break-medium) {
+      display: block;
+    }
+
   }
 }

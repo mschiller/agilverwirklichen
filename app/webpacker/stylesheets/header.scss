@@ -35,6 +35,12 @@
   }
 
   #header_content {
+    text-align: center;
+
+    @include breakpoint($break-medium) {
+      text-align: left;
+    }
+
     .logo {
       max-height: 55px;
       width: auto;
