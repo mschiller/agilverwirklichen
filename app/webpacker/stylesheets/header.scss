@@ -8,6 +8,7 @@
     background-color: $header_background;
     transition: height 0.3s ease-out;
     height: $header_height;
+
     @include breakpoint($break-medium) {
       height: 109px;
     }
@@ -151,12 +152,12 @@
       height: 2.5em;
     }
 
-    #header_content{
+    #header_content {
       float: none;
     }
 
     a {
-      color: $header_background;
+      color: $header_text_color;
       padding-right: 15px;
     }
 
