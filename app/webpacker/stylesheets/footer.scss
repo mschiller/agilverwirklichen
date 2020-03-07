@@ -1,8 +1,8 @@
 #footer {
   padding: 20px;
   font-family: $text_font_family;
-  color: $header_text_color;
-  background-color: $header_background;
+  background-color: $footer_background_color;
+  color: $footer_text_color;
 
   h4 {
     font-family: $header_font_family;
@@ -11,14 +11,15 @@
 
   a {
     text-decoration: none;
-    color: $header_text_color;
+    color: $footer_text_color;
   }
 
   .copyright {
     font-family: $brand_font_family;
   }
 
-  ul, ol {
+  ul,
+  ol {
     padding-left: 0px;
   }
 

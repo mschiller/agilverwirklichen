@@ -2,6 +2,7 @@
   z-index: 100;
   position: fixed;
   width: 100%;
+  border-bottom: 7px solid $primary_calltoaction_background;
 
   #autohide {
     overflow: hidden;
@@ -152,10 +153,6 @@
       display: block;
       padding: 0 1em 0;
       height: 2.5em;
-    }
-
-    #header_content {
-      float: none;
     }
 
     a {

@@ -91,9 +91,9 @@ de:
         header: 'Bitte melden Sie sich an'
 
   navigation:
-    admin: 'Administration'
+    admin: 'Admin'
     shopadmin: 'Shop-Backend'
-    cms: 'Content-Management'
+    cms: 'CMS'
     sign_in: 'Anmelden'
     sign_up: 'Registrieren'
     signed_out: 'Ausloggen'
