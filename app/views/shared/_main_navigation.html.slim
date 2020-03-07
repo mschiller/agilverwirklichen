@@ -7,16 +7,12 @@
             i.fa.fa-user
             =< t('navigation.profile')
         - else
-          li= link_to main_app.new_user_session_path, rel: :nofollow do
-            i.fa.fa-user
-            =< t('navigation.sign_in')
           - ::Comfy::Cms::Page.root.children.published.each do |page|
             - if cms_fragment_content(:nav_item, page) == true
               li.nav-item.active
                 - n.item page.label, proc{ page.full_path }, class: 'entry', highlights_on: /^#{page.full_path}/
-          - unless user_signed_in?
-            - n.item "<i class=\"fa fa-sign-in-alt\"></i> #{t('navigation.sign_up')}", proc{ new_registration_path(User)}, class: 'entry', highlights_on: /^\/users\/sign_up/
-            - n.item "<i class=\"fa fa-user\"></i> #{t('navigation.sign_in')}", proc{ new_session_path(User)}, class: 'entry', highlights_on: /^\/users\/sign_in/
+          - n.item "<i class=\"fa fa-sign-in-alt\"></i> #{t('navigation.sign_up')}", proc{ new_registration_path(User)}, class: 'entry', highlights_on: /^\/users\/sign_up/
+          - n.item "<i class=\"fa fa-user\"></i> #{t('navigation.sign_in')}", proc{ new_session_path(User)}, class: 'entry', highlights_on: /^\/users\/sign_in/
         - if user_signed_in? and current_user.admin?
           li.entry
             = link_to '/cms', target: '_blank' do
