@@ -60,5 +60,3 @@ redis_store_url: ''
 api_url: ''
 api_username: ''
 api_password: ''
-
-rollbar_access_token: ''
