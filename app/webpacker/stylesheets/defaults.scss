@@ -1,4 +1,3 @@
-
 .thredded--main-container {
   max-width: 100% !important;
 }
@@ -20,19 +19,34 @@ body {
   flex-direction: column;
 }
 
+.page-title {
+  border-bottom: 1px solid #b7c7cf;
+
+  h2,
+  .h2 {
+    font-size: 30px;
+    margin: 20px 0;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+}
+
 main {
   flex: 1 0 auto;
   min-height: 70%;
 
-  &#content{
-    padding:10px;
+  &#content {
+    padding: 10px;
   }
 }
 
-a,a:link,a:visited  {
+a,
+a:link,
+a:visited {
   outline: none 0;
   color: $link_color;
   text-decoration: none;
+
   &:hover {
     color: $link_hover_color;
   }
@@ -41,7 +55,8 @@ a,a:link,a:visited  {
 .actions {
   text-align: right;
 
-  .button, .btn {
+  .button,
+  .btn {
     margin-right: 20px;
     margin-bottom: 10px;
   }
@@ -52,6 +67,7 @@ a,a:link,a:visited  {
 
   &.center_on_mobile {
     text-align: center;
+
     @include breakpoint($break-large) {
       text-align: right;
     }
@@ -64,7 +80,7 @@ hr {
 }
 
 .left {
-  float:left;
+  float: left;
 }
 
 .justify {
@@ -87,28 +103,34 @@ img {
   vertical-align: initial;
 }
 
-span.bold, p.bold, li.bold {
+span.bold,
+p.bold,
+li.bold {
   font-weight: bold;
 }
 
-.left_column, .right_column {
+.left_column,
+.right_column {
   float: left;
   min-width: 40%;
 }
 
-sup, sub {
+sup,
+sub {
   line-height: 0; // fix for sup,sub suggested by http://www.slideshare.net/maxdesign/line-height
 }
 
 .clear {
-  clear:both;
+  clear: both;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
 }
 
-.hidden, .ui-helper-hidden-accessible {
+.hidden,
+.ui-helper-hidden-accessible {
   display: none;
 }
 
