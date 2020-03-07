@@ -53,7 +53,7 @@
       word-wrap: break-word;
       margin-bottom: 10px;
       font-size: 12px;
-      line-height: 12px;
+      line-height: 20px;
 
       @include breakpoint($break-small) {
         font-size: 30px;
