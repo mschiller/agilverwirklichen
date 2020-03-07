@@ -1,0 +1,108 @@
+de:
+  title: 'Emvellon.de'
+
+  fields:
+    hello: 'Hallo'
+    page: 'Seite'
+    of: 'von'
+    new: 'neu'
+    new_2: 'Neu'
+    new_3: 'Neu im Verlag'
+    on_date: 'am'
+    to: 'nach'
+    more: 'mehr'
+    less: 'weniger'
+    detailed_search: 'Erweiterte Suche'
+    simple_search: 'Einfache Suche'
+    welcome: 'Willkommen'
+    time: 'Zeit'
+    added: 'hinzugefügt am'
+    close: 'Schließen'
+    not_specified: 'Keine Angabe'
+    order: 'bestellen'
+    minutes: 'min'
+    search_result: 'Suchergebnisse'
+    are_you_sure: "Sind Sie sicher?"
+    over: 'Über'
+    for: 'für'
+  menu:
+    back: 'Zurück'
+
+  breadcrumbs:
+    root: 'Homepage'
+    imprint: 'Impressum'
+
+  message:
+    contact_form:
+      send_info: 'Vielen Dank! Die Kontakt-Anfrage wurde abgesendet. Wir werden Sie in Kürze kontaktieren.'
+      send_error: 'Die Kontakt-Anfrage konnte nicht gesendet werden, bitte prüfen Sie daher Ihre Eingaben.'
+      subject: "Kontaktanfrage von %{from_email} am %{datetime}"
+      header: "Folgende Kontaktanfrage wurde über die Internetseite gestellt"
+      send: "Absenden"
+  newsletter:
+    accept: 'Ich bin damit einverstanden, dass meine personenbezogenen Daten für Werbezwecke verarbeitet werden und eine werbliche Ansprache per E-Mail erfolgt. Die erteilte Einwilligung kann ich jederzeit mit Wirkung für die Zukunft in jeder angemessenen Form widerrufen. Hier geht es zu unseren %{link}.'
+
+  errors:
+    messages:
+      confirmation: "'%{attribute}' doesn't match the confirmation. Please retype them and make sure they match."
+      accepted: "Bitte lesen und akzeptieren Sie die '%{attribute}'"
+      empty: "Bitte geben Sie etwas im Feld '%{attribute}' ein"
+      blank: "Bitte geben Sie etwas im Feld '%{attribute}' ein"
+      too_short: "'%{attribute}' ist zu kurz (Das Minimum sind %{count} Zeichen). Bitte geben Sie einen längeren Wert ein"
+      taken: "Der verwendete Wert '%{attribute}' wird bereits verwendet. Bitte wählen Sie einen anderen"
+      invalid: "Bitte einen korrekten Wert für '%{attribute}' angeben"
+
+  attributes:
+    password: 'Passwort'
+    password_confirmation: 'Passwort wiederholen'
+    email: 'E-Mail Adresse'
+    remember_me: 'Angemeldet bleiben'
+    content: 'Inhalt'
+    surname: 'Nachname'
+    firstname: 'Vorname'
+    street: 'Straße und Hausnummer'
+    postcode_city: 'PLZ und Ort'
+    fax: 'Telefon'
+    agb: 'AGBs'
+    customer: 'Kunde'
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: 'Diese E-Mail-Adresse kann nicht verwendet werden'
+        role:
+          attributes:
+            name:
+              taken: 'Dieser Name kann nicht verwendet werden'
+
+    models:
+      user: 'Benutzer'
+      role:
+        one: 'Benutzerrolle'
+        other: 'Benutzerrollen'
+      imprint: 'Impressum'
+      newsletter: 'Newsletter'
+  users:
+    sessions:
+      new:
+        header: 'Bitte melden Sie sich an'
+
+  navigation:
+    admin: 'Administration'
+    shopadmin: 'Shop-Backend'
+    cms: 'Content-Management'
+    sign_in: 'Anmelden'
+    sign_up: 'Registrieren'
+    signed_out: 'Ausloggen'
+    contact: 'Kontakt'
+    search: 'Suche'
+    imprint: 'Impressum'
+    order: 'Warenkorb'
+    profile: 'Mein Profil'
+  footer:
+    services: 'Links'
+    to_us: 'Zum Verlag'
+    yours: 'Ihr Verlag'

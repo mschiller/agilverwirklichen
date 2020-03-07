@@ -1,0 +1,14 @@
+de:
+  routes:
+    articles:
+      as: 'theaterstuecke'
+    topics:
+      as: 'themen'
+    contacts:
+      as: 'autoren'
+    presses:
+      as: 'presse'
+    order:
+      as: 'bestellung'
+    news:
+      as: 'neuigkeiten'

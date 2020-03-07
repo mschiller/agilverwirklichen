@@ -1,0 +1,11 @@
+.parallax-container {
+  height: 90px !important;
+
+  @include breakpoint($break-medium) {
+    height: 350px !important;
+  }
+
+  .parallax img {
+    min-width: 101% !important;
+  }
+}

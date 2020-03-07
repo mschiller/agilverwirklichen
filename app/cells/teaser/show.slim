@@ -1,0 +1,11 @@
+- unless @teasers.empty?
+  #teaser
+    ul.bxslider
+      - @teasers.each do |teaser|
+        - if teaser.image.exists?
+          li
+            .image= image_with_source_tag(teaser.image, { alt: teaser.name })
+            - unless is_mobile_device?
+              - unless teaser.description.blank?
+                .bx-caption
+                  span= teaser.description

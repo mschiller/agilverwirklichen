@@ -1,0 +1,10 @@
+<% if Rails.env.production? %>
+Sitemap: <%= sitemap_url %>
+
+User-Agent: *
+Disallow: /admin
+Disallow: /users
+Disallow: /cms
+<% else %>
+Disallow: /
+<% end %>

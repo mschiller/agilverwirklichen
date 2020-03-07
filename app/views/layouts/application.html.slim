@@ -1,0 +1,13 @@
+doctype html
+html
+  = render partial: 'layouts/header'
+  body
+    header#header
+      = render partial: 'shared/page_header'
+    = render 'shared/content_header_margin'
+    main#content= yield
+    .clear
+    footer#footer
+      = cms_snippet_content("footer").html_safe
+      .clear
+  = render partial: 'layouts/footer'

@@ -1,0 +1,11 @@
+.left_column
+  h2.sub_header.menu = title t('.change_your_password')
+  .sub_list
+    = simple_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put } do |f|
+      = devise_error_messages!
+      = f.input :password, autofocus: true, hint: t('.charactor_hint', minimum_password_length: @minimum_password_length)
+      = f.input :password
+      = f.hidden_field :reset_password_token
+      br
+      .actions
+        = f.button :submit, t('.change_your_password'), class: [:btn, :primary]

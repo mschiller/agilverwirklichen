@@ -1,0 +1,33 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <header id="header">
+      <%= render partial: 'shared/page_header' %>
+    </header>
+    <%= render 'shared/content_header_margin' %>
+    <main id="content" class="container">
+      <div class="row" data-hook>
+        <%= spree_breadcrumbs(@taxon) %>
+        <div class="clear"></div>
+        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+          <%= yield %>
+        </div>
+
+        <%= yield :templates %>
+      </div>
+    </main>
+    <footer id="footer">
+      <%= cms_snippet_content("footer").html_safe %>
+      <div class="clear"></div>
+      <%= render partial: 'layouts/footer' %>
+    </footer>
+  </body>
+</html>

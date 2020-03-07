@@ -1,0 +1,13 @@
+.content_header {
+  .content_header_container {
+    background-color: $header_background;
+
+    #teaser {
+      .bxslider {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

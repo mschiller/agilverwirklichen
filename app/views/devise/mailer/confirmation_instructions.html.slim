@@ -1,0 +1,3 @@
+h2= t('.greeting', app_header: Figaro.env.app_header)
+p= t('.instruction')
+p= link_to t('.action'), user_confirmation_url(locale: I18n.locale, confirmation_token: @token)

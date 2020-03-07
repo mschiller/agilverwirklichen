@@ -1,0 +1,7 @@
+de:
+  unauthorized:
+    manage:
+      all: "Sie haben keine Berechtigung, diese Aktion auszuführen oder diesen Bereich einzusehen (%{action}/%{subject})."
+      user: "Sie haben keine Berechtigung, andere Accounts zu verwalten."
+    update:
+      project: "Sie haben keine Berechtigung, dieses Projekt zu verwalten."

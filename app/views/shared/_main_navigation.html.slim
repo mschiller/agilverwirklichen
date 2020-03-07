@@ -1,0 +1,31 @@
+= semantic_navigation :primary, id: 'main_navigation', class: 'hover_menu js-hover_menu'  do |n|
+  #header_content
+    - if is_mobile_device?
+      = cms_snippet_content('main_navbar').html_safe
+
+      li= link_to main_app.thredded_path do
+        i.fa.fa-question-circle
+        =< 'Forum'
+    = cms_snippet_content('sub_navbar').html_safe
+    - ::Comfy::Cms::Page.root.children.published.each do |page|
+      - if cms_fragment_content(:nav_item, page) == true
+        li.nav-item.active
+          - n.item page.label, proc{ page.full_path }, class: 'entry', highlights_on: /^#{page.full_path}/
+    - unless user_signed_in?
+      - n.item "<i class=\"fa fa-sign-in-alt\"></i> #{t('navigation.sign_up')}", proc{ new_registration_path(User)}, class: 'entry', highlights_on: /^\/users\/sign_up/
+      - n.item "<i class=\"fa fa-user\"></i> #{t('navigation.sign_in')}", proc{ new_session_path(User)}, class: 'entry', highlights_on: /^\/users\/sign_in/
+    - if user_signed_in? and current_user.admin?
+      li.entry
+        = link_to '/cms', target: '_blank' do
+          i.fa.fa-angle-double-right
+          =< t('navigation.cms')
+      li.entry
+        = link_to '/admin', target: '_blank' do
+          i.fa.fa-angle-double-right
+          =< t('navigation.admin')
+      /li.entry
+        = link_to '/shop/admin', target: '_blank' do
+          i.fa.fa-angle-double-right
+          =< t('navigation.shopadmin')
+      = yield :admin_menu
+.clear

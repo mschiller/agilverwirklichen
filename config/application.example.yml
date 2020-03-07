@@ -1,0 +1,64 @@
+development:
+  domain: 'localhost:3000'
+  database_name: ''
+  database_username: ''
+  database_password: ''
+
+staging:
+  domain: 'localhost:3000'
+  database_name: ''
+  database_username: ''
+  database_password: ''
+
+test:
+  domain: 'localhost:3000'
+  database_name: ''
+  database_username: ''
+  database_password: ''
+
+app_name: ''
+app_header: ''
+email: ''
+company_name: ''
+protocol: ''
+with_profiling: ''
+
+rapidmail_api_user: ''
+rapidmail_api_password: ''
+
+devise_secret_key: ''
+
+device_pepper: ""
+
+git_respository: ""
+
+session_session_key: ''
+session_secret_token: ''
+session_secret_key_base: ''
+session_expired_after: '2'
+
+mail_default_to: ''
+mail_default_charset: 'utf-8'
+
+mail_smtp_address: ''
+mail_smtp_port: ''
+mail_smtp_username: ''
+mail_smtp_password: ''
+mail_smtp_authentication: 'plain'
+
+exception_notification_recipients: ''
+notifications_recipients: ''
+
+newletter_id: ''
+
+google_api_key: ''
+
+google_tag_manager_id: ''
+
+redis_store_url: ''
+
+api_url: ''
+api_username: ''
+api_password: ''
+
+rollbar_access_token: ''

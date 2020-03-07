@@ -1,0 +1,9 @@
+.left_column
+  h2.sub_header.menu = title t('.resend_confirmation_instructions')
+  .sub_list
+    = simple_form_for resource, :as => resource_name, :url => confirmation_path(resource_name), html: { method: :post } do |f|
+      = f.input :email, autofocus: true
+      br
+      = f.submit t('.resend_confirmation_instructions'), class: [:btn, :primary]
+
+= render 'devise/shared/links'

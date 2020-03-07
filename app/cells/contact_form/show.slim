@@ -1,0 +1,8 @@
+.contact_form
+  = simple_form_for @contact_form, :remote => true, :url => 'send_contact_form', method: :post do |f|
+    = f.input :email
+    = f.input :content, :as => :text
+    = rucaptcha_input_tag(class: 'form-control', placeholder: 'Captcha hier eingeben')
+    = rucaptcha_image_tag(alt: 'Captcha')
+    .actions
+      = f.submit I18n.t('message.contact_form.send'), class: 'btn'

@@ -1,0 +1,6 @@
+h2= t('.action')
+p= t('.greeting', recipient: @user.first_name)
+- if @resource.try(:unconfirmed_email?)
+  p= t('.instruction_unconfirmed', email: @resource.unconfirmed_email)
+- else
+  p= t('.instruction', email: @resource.email)

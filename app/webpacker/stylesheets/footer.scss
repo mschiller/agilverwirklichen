@@ -1,0 +1,46 @@
+#footer {
+  padding: 20px;
+  font-family: $text_font_family;
+  color: $header_text_color;
+  background-color: $header_background;
+
+  h4 {
+    font-family: $header_font_family;
+    margin-left: 0px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $header_text_color;
+  }
+
+  .copyright {
+    font-family: $brand_font_family;
+  }
+
+  ul, ol {
+    padding-left: 0px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .float_right {
+    @include breakpoint($break-large) {
+      float: right;
+    }
+  }
+
+  .segment {
+    float: left;
+    padding: 20px;
+    margin-right: 40px;
+
+    &.right {
+      float: right;
+      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+}

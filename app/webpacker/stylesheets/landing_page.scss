@@ -1,0 +1,76 @@
+.landingpage {
+
+  #start {
+    color: #ffffff;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  #start h1 {
+    font-size: 40px;
+    text-shadow: 3px 3px black;
+    font-weight: bold;
+    font-family: 'Montserrat',sans-serif;
+
+    @include breakpoint($break-medium) {
+      font-size: 65px;
+    }
+    @include breakpoint($break-large) {
+      font-size: 84px;
+    }
+  }
+
+  #start h2 {
+    font-size: 20px;
+    font-family: 'Montserrat',sans-serif;
+    margin-top: 30px;
+
+    @include breakpoint($break-medium) {
+      font-size: 25px;
+    }
+    @include breakpoint($break-large) {
+      font-size: 28px;
+    }
+  }
+
+  #server {
+    #ts_link {
+      float: left;
+      margin-bottom: 10px;
+      line-height: 45px;
+
+      div {
+        width: 315px;
+        float: left;
+      }
+    }
+
+    a {
+      color: rgba(0,0,0,.87);
+    }
+
+    input#server_address {
+      padding-top: 7px;
+      padding-bottom: 3px;
+      border-right: 0;
+      background-color: transparent;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      border-bottom: 0;
+      border-top: 0;
+      width: 280px;
+    }
+
+    a, #server_address {
+      padding: 15px;
+      margin-top: 5px;
+      font-size: 22px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      border-left: 5px solid #FF8500;
+    }
+  }
+}

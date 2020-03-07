@@ -1,0 +1,61 @@
+@mixin default_error {
+  color: #A4091E;
+  margin:0;
+  padding:0;
+  padding-right: 10px;
+  background-color: $content_background;
+  border: none;
+  font-size: 0.8em;
+}
+
+@mixin icon($image_url) {
+  padding-left: 21px;
+  background: unquote("transparent url(#{$image_url}) no-repeat left center"); }
+
+@mixin hide_last_margin {
+  >*:last-child {
+    margin-bottom: 0 !important;
+    >*:last-child {
+      margin-bottom: 0 !important; } } }
+
+@mixin zero {
+  height: 0;
+  line-height: 0;
+  font-size: 0; }
+
+@mixin height($height) {
+  height: $height;
+  line-height: floor($height / 2) * 2; }
+
+@mixin gradient($first, $second) {
+  background: $first * 0.5 + $second * 0.5;
+  filter: unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$first}', endColorstr='#{$second}')");
+  background: unquote("-webkit-gradient(linear, left top, left bottom, from(#{$first}), to(#{$second}))");
+  background: unquote("-moz-linear-gradient(top, #{$first}, #{$second})"); }
+
+@mixin opacity($opacity) {
+  filter: unquote("alpha(opacity=#{$opacity * 100})");
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity; }
+
+@mixin rgba_background($red, $green, $blue, $alpha) {
+  background-color: rgba($red, $green, $blue, $alpha);
+  -pie-background: rgba($red, $green, $blue, $alpha);
+  }
+
+@mixin gray_scale($value) {
+  filter: url("data:image/svg+xml;utf8,<svg%20xmlns=\'http://www.w3.org/2000/svg\'><filter%20id=\'grayscale\'><feColorMatrix%20type=\'matrix\'%20values=\'0.3333,0.3333,0.3333,0,0,0.3333,0.3333,0.3333,0,0,0.3333,0.3333,0.3333,0,0,0,0,0,1,0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: grayscale($value);
+  -moz-filter: grayscale($value);
+  -ms-filter: grayscale($value);
+  -o-filter: grayscale($value);
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale($value); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+  zoom: 1;  /* needed to trigger "hasLayout" in IE if no width or height is set */
+}
+
+@mixin height($height) {
+  height: $height;
+  line-height: floor($height / 2) * 2;
+}

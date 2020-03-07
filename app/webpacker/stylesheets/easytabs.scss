@@ -1,0 +1,40 @@
+.tab-container {
+  margin-top: 15px;
+
+  .etabs {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.tab, .pseudotab {
+  border: solid 1px $default_line_color;
+
+  a{
+    line-height: 2em;
+    padding: 5px 15px;
+    display: block;
+  }
+
+  @include breakpoint($break-small) {
+    padding: 0;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    background: #eee;
+    border-bottom: none;
+
+    a {
+      outline: none;
+    }
+  }
+}
+
+.tab-container .panel-container {
+  background: #fff;
+  border-top: solid $default_line_color 1px;
+}
+
+.panel-container {
+  margin-bottom: 10px;
+}

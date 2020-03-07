@@ -1,0 +1,9 @@
+<% if cookies && cookies['cookie_eu_consented'] != 'true' %>
+  <div class="cookies-eu js-cookies-eu">
+    <span class="cookies-eu-content-holder"><%= t('cookies_eu.cookies_text') %></span>
+    <span class="cookies-eu-button-holder">
+      <a class="btn js-cookies-eu-ok"> <%= t('cookies_eu.ok') %> </a>
+      <a href="/datenschutz" class="btn secondary" target="_blank"> <%= t('cookies_eu.learn_more') %> </a>
+    </span>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+.left_column
+  h2.sub_header.menu = title t('.header')
+  .sub_list
+    = simple_form_for resource, validate: true, as: resource_name, url: registration_path(resource_name) do |f|
+      = f.input :email, autofocus: true
+      = f.input :password
+      = f.input :password_confirmation, required: true
+      = rucaptcha_input_tag(class: 'form-control', placeholder: 'Captcha hier eingeben')
+      = rucaptcha_image_tag(alt: 'Captcha')
+      br
+      = f.button :submit, t('devise.registrations.new.sign_up'), class: [:btn, :primary]
+
+= render 'devise/shared/links'

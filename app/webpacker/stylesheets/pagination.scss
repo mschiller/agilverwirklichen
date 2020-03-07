@@ -1,0 +1,18 @@
+.pagination {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  margin-right: 20px;
+
+  .page, .next, .last, .first, .prev {
+    background-color: #FFFFFF;
+    color: #BBBBBB;
+    border: 1px solid #BBBBBB;
+    padding: 5px 8px;
+    margin:5px 0;
+
+    &.gap {
+      border: 0;
+      padding: 5px 2px;
+    }
+  }
+}

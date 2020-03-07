@@ -1,0 +1,24 @@
+en:
+  title: "Emvellon.de"
+
+  fields:
+    page: "Site"
+    of: "of"
+    new: "new"
+    to: "to"
+    welcome: "Welcome"
+    time: "time"
+
+  breadcrumbs:
+    root: Homepage
+    imprint: imprint
+    #dynamic_example: Hi %{name}
+
+  activerecord:
+    errors:
+      messages:
+        mx_invalid: "is not valid"
+
+    attributes:
+      article:
+        teaser: Teaser

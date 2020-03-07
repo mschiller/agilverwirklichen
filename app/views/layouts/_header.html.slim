@@ -1,0 +1,22 @@
+head
+  = yield :meta_data
+  = yield :rel_next_prev
+  - @meta_tags_options = yield :meta_tags_options
+  = head_meta_tags(JSON.parse( @meta_tags_options.present? ? @meta_tags_options : {}.to_json ))
+  = csrf_meta_tags
+  meta charset="UTF-8"
+  meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=3.0"
+  = favicon_link_pack_tag
+  link rel="apple-touch-icon" href=asset_pack_url('media/images/apple-touch-icon.png')
+  = yield :head
+  = stylesheet_pack_tag '_application'
+  /= render 'spree/shared/paths'
+  /= stylesheet_link_tag 'spree/frontend/all', media: 'screen'
+  /= javascript_include_tag 'spree/frontend/cart'
+  = cms_snippet_content("header_includes").html_safe
+  - unless yield(:thredded_page_title).empty?
+    = stylesheet_link_tag 'thredded', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'thredded',
+      async: !Rails.application.config.assets.debug,
+        defer: true,
+          'data-turbolinks-track': 'reload'

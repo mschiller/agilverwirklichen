@@ -1,0 +1,25 @@
+.left_column
+  .sub_list
+    h2.sub_header.menu = title t('devise.profile.edit')
+
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      p.bold.blue
+        =t('devise.registrations.edit.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email )
+
+    p= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |f|
+      = devise_error_messages!
+      = f.input :first_name, autofocus: true
+      = f.input :surname
+      = f.input :email
+      - if @user.avatar.attached?
+        = image_tag @user.avatar.variant(combine_options: { auto_orient: true, gravity: "center", resize: "100x100^", crop: "100x100+0+0" }), height: '100'
+      = f.input :avatar, as: :file
+      = f.input :remove_avatar, as: :boolean
+      br
+      = f.button :submit, class: [:btn, :primary]
+
+.clear
+hr
+.actions
+  = link_to t('devise.passwords.edit.change_my_password'), profile_change_password_path(resource), class: [:btn, :secondary]
+  = link_to t('devise.cancel_my_account'), registration_path(resource), data: { confirm: t('devise.are_you_sure') }, method: :delete, class: [:btn, :secondary]

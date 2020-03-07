@@ -1,0 +1,117 @@
+
+.thredded--main-container {
+  max-width: 100% !important;
+}
+
+body {
+  background-color: $body_background;
+  font-family: $text_font_family;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: $text_font_size;
+  word-wrap: break-word;
+  color: rgba(0, 0, 0, .87);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  min-height: 70%;
+
+  &#content{
+    padding:10px;
+  }
+}
+
+a,a:link,a:visited  {
+  outline: none 0;
+  color: $link_color;
+  text-decoration: none;
+  &:hover {
+    color: $link_hover_color;
+  }
+}
+
+.actions {
+  text-align: right;
+
+  .button, .btn {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.center_on_mobile {
+    text-align: center;
+    @include breakpoint($break-large) {
+      text-align: right;
+    }
+  }
+}
+
+hr {
+  border: 1px solid $header_background;
+  margin-top: 60px;
+}
+
+.left {
+  float:left;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.default_text_margin {
+  margin-bottom: $default_text_margin;
+}
+
+img {
+  border: 0px;
+  max-width: 100%;
+  vertical-align: initial;
+}
+
+span.bold, p.bold, li.bold {
+  font-weight: bold;
+}
+
+.left_column, .right_column {
+  float: left;
+  min-width: 40%;
+}
+
+sup, sub {
+  line-height: 0; // fix for sup,sub suggested by http://www.slideshare.net/maxdesign/line-height
+}
+
+.clear {
+  clear:both;
+}
+
+ul, ol {
+  margin: 0;
+}
+
+.hidden, .ui-helper-hidden-accessible {
+  display: none;
+}
+
+#error_explanation {
+  color: #E53935;
+}

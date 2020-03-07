@@ -1,0 +1,31 @@
+h1 = title "#{t('fields.hello')} #{@user.first_name}."
+.left_column
+  .sub_list
+    - if @user.avatar.attached?
+      = image_tag @user.avatar.variant(resize: "300x300!"), height: '300'
+    - else
+      = image_pack_tag 'media/images/defaults/user.png', height: '300'
+
+.right_column
+  .sub_list
+    - if current_user == @user
+      p.bold
+        = t('activerecord.attributes.user.email')
+        |:
+        =< @user.email
+      p.bold
+        = t('activerecord.attributes.user.first_name')
+        |:
+        =< @user.first_name
+      p.bold
+        = t('activerecord.attributes.user.surname')
+        |:
+        =< @user.surname
+.clear
+
+- if @user == current_user
+  hr
+  .box-style.actions
+    = button_to t('navigation.signed_out'), destroy_user_session_path, method: :delete, class: [:btn, :secondary], style: 'float:right'
+    = link_to t('devise.profile.edit'), edit_user_registration_path(@user), class: [:btn, :secondary]
+    = link_to t('devise.passwords.edit.change_my_password'), profile_change_password_path(@user), class: [:btn, :secondary]

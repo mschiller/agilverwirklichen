@@ -1,0 +1,33 @@
+class ApplicationController < ApplicationBaseController
+  include ActionController::MobileFu
+  include StrongParameterMethods
+  include ContactFormMethods
+  include PaperTrailMethods
+  include AjaxFlashMethods
+  include CacheHelper
+
+  has_mobile_fu false
+
+  helper :all
+  respond_to :html
+
+  def self.default_url_options
+    { locale: I18n.locale }
+  end
+
+  protected
+
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || profile_path(resource)
+  end
+
+  def user_for_paper_trail
+    user_signed_in? ? current_user.id : 'Public user'
+  end
+
+  private
+
+  def set_current_user
+    User.current_user = current_user
+  end
+end

@@ -1,0 +1,32 @@
+#autohide
+  #header_content
+    a[href="/"]
+      = image_pack_tag('media/images/logo.png', alt: Figaro.env.app_header, class: :logo)
+
+    - if !is_mobile_device?
+      ul#head_navigation.hover_menu.js-hover_menu.hide_on_tablet_and_mobile
+
+        = cms_snippet_content('main_navbar').html_safe
+
+        li= link_to main_app.thredded_path do
+          i.fa.fa-question-circle
+          =< 'Forum'
+        - if user_signed_in?
+          li= link_to main_app.profile_path(current_user), rel: :nofollow do
+            i.fa.fa-user
+            =< t('navigation.profile')
+        - else
+          li= link_to main_app.new_user_session_path, rel: :nofollow do
+            i.fa.fa-user
+            =< t('navigation.sign_in')
+
+        /li#link-to-cart
+          javascript:
+            Spree.fetch_cart();
+
+    .toggle-mobile-menu
+      = link_to '#' do
+        i.fa.fa-bars.js-menu_burger
+  .clear
+  = render partial: 'shared/main_navigation'
+= render partial: 'shared/flash'
