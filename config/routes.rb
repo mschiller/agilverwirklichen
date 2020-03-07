@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get 'robots.txt' => 'home#robots', format: :text, as: :robots
 
   mount Thredded::Engine => '/forum'
-  #mount Spree::Core::Engine, at: '/shop'
   mount Ckeditor::Engine => '/ckeditor'
 
   comfy_route :cms_admin, :path => '/cms'
