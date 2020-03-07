@@ -1,8 +1,8 @@
 .parallax-container {
-  height: 90px !important;
+  height: 100px !important;
 
   @include breakpoint($break-medium) {
-    height: 350px !important;
+    height: 580px !important;
   }
 
   .parallax img {

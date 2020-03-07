@@ -8,10 +8,6 @@
     background-color: $header_background;
     transition: height 0.3s ease-out;
     height: $header_height;
-
-    @include breakpoint($break-medium) {
-      height: 109px;
-    }
   }
 
   .toggle-mobile-menu {
