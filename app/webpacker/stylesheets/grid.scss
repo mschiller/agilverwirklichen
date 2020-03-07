@@ -19,7 +19,8 @@ body {
   @include kill-mobile-zoom;
   @include kill-tap-highlight;
 
-  #content {
+  #content,
+  #header_content {
     @include breakpoint($break-medium) {
       @include grid-span(1, 2);
     }

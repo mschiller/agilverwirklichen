@@ -52,6 +52,40 @@ a:visited {
   }
 }
 
+blockquote {
+  background-color: #f9f9f9;
+  border-left: 6px solid $primary_calltoaction_border !important;
+  border-right: 1px solid #ebebeb;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 3px;
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 20px 15px 20px 32px;
+  position: relative;
+
+  p {
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 0 5px;
+    padding-left: 5px;
+  }
+}
+
+blockquote::before {
+  content: "\f10d";
+  color:
+    #5ca2df;
+  font-family: FontAwesome;
+  font-size: 22px;
+  position: absolute;
+  left: 8px;
+  top: 17px;
+}
+
 .actions {
   text-align: right;
 

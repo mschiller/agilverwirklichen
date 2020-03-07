@@ -5,7 +5,7 @@ html
     header#header
       = render partial: 'shared/page_header'
     = render 'shared/content_header_margin'
-    main= yield
+    main#content= yield
     .clear
     footer#footer
       = cms_snippet_content("footer").html_safe
