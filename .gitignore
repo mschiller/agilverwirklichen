@@ -1,0 +1,59 @@
+# Rules
+# Blank lines or lines starting with # are ignored.
+# Standard glob patterns work.
+# You can end patterns with a forward slash (/) to specify a directory.
+# You can negate a pattern by starting it with an exclamation point (!).
+#   *.a       # no .a files
+#   !lib.a    # but do track lib.a, even though you're ignoring .a files above
+
+config/application.yml
+config/secrets.yml
+coverage/*
+db/*.sqlite3
+db/*.sql
+db/easy-migrations-tmp/
+log/*.log
+log/
+pdfs/
+tmp
+doc/api
+doc/app
+vendor/cache/
+!vendor/gems/cache/
+.idea
+.DS_Store
+.sass-cache/
+*.log
+*.swp
+*~
+*.[oa]
+.bundle
+.yardoc
+.vagrant
+solr/
+*.pid
+/.sass-cache/
+public/assets/
+public/ckeditor_assets/
+public/sitemaps/
+public/system/
+public/packs/
+storage/
+.directory
+public/packs/
+public/packs-test/
+node_modules/
+yarn-debug.log*
+.yarn-integrity/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
+config/skylight.yml
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+output.txt
