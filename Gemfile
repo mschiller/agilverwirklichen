@@ -56,7 +56,7 @@ gem 'browser'
 gem 'dotenv-rails'
 gem 'rucaptcha'
 gem 'exception_notification'
-#gem "skylight"
+gem "skylight"
 gem 'thredded'
 gem 'mini_magick'
 gem 'image_processing'
