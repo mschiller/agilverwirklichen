@@ -52,19 +52,20 @@
       &#head_navigation {
         color: $header_text_color;
         float: right;
-        margin-top: 22px;
+        margin-top: 18px;
 
         &:hover {
           background-color: $header_background;
         }
 
         a {
-          color: $header_text_color;
-          font-size: 18px;
+          font-size: 16px;
           padding-left: 10px;
           padding-right: 10px;
           font-weight: 700;
+          color: $header_text_color;
           text-transform: uppercase;
+          letter-spacing: .2em;
 
           &.first {
             border-left: none;
@@ -95,6 +96,11 @@
 
         li {
           float: left;
+
+          &.entry {
+            margin-top: 5px;
+          }
+
         }
       }
 

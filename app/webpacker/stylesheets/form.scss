@@ -58,13 +58,17 @@ textarea.materialize-textarea {
   -webkit-appearance: none;
   border-radius: 3px;
 
+  &a {
+    color: $secondary_calltoaction_color;
+  }
+
   &:hover,
   &:active,
   &.btn.active,
   &:focus {
     text-decoration: none !important;
-    background-color: #CCCCCC;
-    color: #FFFFFF;
+    background-color: $secondary_calltoaction_background;
+    color: $secondary_calltoaction_color;
   }
 
   &.left {

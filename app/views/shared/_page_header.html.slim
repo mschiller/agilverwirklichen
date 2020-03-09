@@ -6,14 +6,6 @@
     - if !is_mobile_device?
       ul#head_navigation.hover_menu.js-hover_menu.hide_on_tablet_and_mobile
         = cms_snippet_content('main_navbar').html_safe
-        - if user_signed_in?
-          li= link_to main_app.profile_path(current_user), rel: :nofollow do
-            i.fa.fa-user
-            =< t('navigation.profile')
-        - else
-          li= link_to main_app.new_user_session_path, rel: :nofollow do
-            i.fa.fa-user
-            =< t('navigation.sign_in')
         - if user_signed_in? and current_user.admin?
           li.entry
             = link_to '/cms', target: '_blank' do
@@ -24,6 +16,16 @@
               i.fa.fa-angle-double-right
               =< t('navigation.admin')
           = yield :admin_menu
+        - if user_signed_in?
+          li= link_to main_app.profile_path(current_user), rel: :nofollow do
+            .btn
+              i.fa.fa-user
+              =< t('navigation.profile')
+        - else
+          li= link_to main_app.new_user_session_path, rel: :nofollow do
+            .btn
+              i.fa.fa-user
+              =< t('navigation.sign_in')
     
     .toggle-mobile-menu
       = link_to '#' do
