@@ -45,14 +45,18 @@
 
       #me-caption {
         position: relative;
-        top: -150px;
-        left: 50px;
+        top: -200px;
+        left: 30px;
         width: 50%;
 
-        @include breakpoint($break-small) {
-          top: -300px;
+        .flex-btn {
+          margin-top: 5px;
+        }
+
+        @include breakpoint($break-medium) {
           left: 100px;
           width: 30%;
+          top: -343px;
         }
 
         h2 {
