@@ -4,7 +4,7 @@ $(function () {
   $('.bxslider').bxSlider({
     auto: true,
     pause: 6000,
-    autoHover: true,
+    autoHover: false,
     minSlides: 2,
     maxSlides: 5,
     randomStart: true,
@@ -22,3 +22,23 @@ $(function () {
     }
   });
 });
+
+var xSeconds = 3000; // 2 second
+
+
+function resize() {
+  var heights = window.innerHeight;
+  document.getElementById("js_full_teaser").style.height = (heights - 185) + "px";
+}
+
+$(document).ready(function () {
+  resize();
+
+  setTimeout(function () {
+    $('#js_fade_header').fadeIn('slow');
+  }, xSeconds);
+});
+
+window.onresize = function () {
+  resize();
+};
