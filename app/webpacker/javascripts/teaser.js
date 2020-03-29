@@ -1,6 +1,6 @@
 import 'bxslider/dist/jquery.bxslider';
 
-$(function(){
+$(function () {
   $('.bxslider').bxSlider({
     auto: true,
     pause: 6000,
@@ -8,13 +8,15 @@ $(function(){
     minSlides: 2,
     maxSlides: 5,
     randomStart: true,
-    //easing: 'swing',
-    //mode: 'horizontal',
-    //preloadImages: 'all',
-    //hideControlOnEnd: true
+    infiniteLoop: true,
+    randomStart: true,
+    easing: 'swing',
+    mode: 'horizontal',
+    preloadImages: 'all',
+    hideControlOnEnd: true,
 
-    onSliderLoad: function() {
-      setTimeout(function() {
+    onSliderLoad: function () {
+      setTimeout(function () {
         $('#teaser').css('visibility', 'visible');
       }, 20);
     }

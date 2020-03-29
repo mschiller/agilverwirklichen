@@ -1,6 +1,6 @@
-RAILS_ROOT = File.expand_path('../../', __FILE__)
+RAILS_ROOT = File.expand_path("../../", __FILE__)
 
-require 'figaro'
+require "figaro"
 @figaro = Figaro
 @figaro.application = @figaro::Application.new(environment: :development, path: File.join(RAILS_ROOT, "config", "application.yml"))
 @figaro.load
@@ -17,16 +17,16 @@ set :repo_url, @figaro.env.git_respository
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory
-set :deploy_to, '~/servers/' + @figaro.env.app_name + '/production'
+set :deploy_to, "~/servers/" + @figaro.env.app_name + "/production"
 set :shared_path, "#{deploy_to}/shared"
 
 # yarn
 set :nvm_type, :user # or :system
-set :nvm_node, 'v7.10.0'
+set :nvm_node, "v7.10.0"
 set :nvm_map_bins, %w{node npm yarn}
 
 set :yarn_target_path, -> { release_path }
-set :yarn_flags, '--production --silent --no-progress'    # default
+set :yarn_flags, "--production --silent --no-progress"    # default
 set :yarn_roles, :all                                     # default
 set :yarn_env_variables, {}
 
@@ -46,18 +46,18 @@ set :assets_roles, [:app]
 set :git_enable_submodules, false
 set :use_sudo, false
 
-set :log_level, :debug
+#set :log_level, :debug
 set :pty, true
 
 set :linked_files, %w{config/secrets.yml config/application.yml config/skylight.yml}
 set :linked_dirs, %w{.bundle log tmp/pids tmp/cache tmp/sockets vendor/bundle
-                      public/system public/sitemaps public/ckeditor_assets storage node_modules}
+                     public/system public/sitemaps public/ckeditor_assets storage node_modules}
 
 set :keep_releases, 20
 
-set :user, 'deploy'
+set :user, "deploy"
 set :ssh_options, {
-    user: fetch(:user)
+  user: fetch(:user),
 }
 
 set :whenever_roles, -> { [:app] }
@@ -75,4 +75,4 @@ namespace :cache do
   end
 end
 
-after 'deploy', 'cache:clear'
+after "deploy", "cache:clear"

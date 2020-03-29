@@ -10,7 +10,7 @@ body {
   padding: 0;
   font-size: $text_font_size;
   word-wrap: break-word;
-  color: rgba(0, 0, 0, .87);
+  color: $default_font_color;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
@@ -101,8 +101,7 @@ blockquote {
 
 blockquote::before {
   content: "\f10d";
-  color:
-    #5ca2df;
+  color: $link_color;
   font-family: FontAwesome;
   font-size: 22px;
   position: absolute;

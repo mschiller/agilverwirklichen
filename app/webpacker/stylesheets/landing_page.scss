@@ -1,10 +1,11 @@
 .landingpage {
 
   .header-title {
-    background-color: $footer_background_color;
     color: $footer_text_color;
     text-align: center;
     padding: 15px 0 10px 0;
+    background: -webkit-gradient(linear, left top, right top, from($footer_background_color), to(white));
+    background: linear-gradient(to left, $footer_background_color 30%, white 100%);
   }
 
   h1 {
@@ -27,6 +28,46 @@
     width: 100%;
     overflow: hidden;
     margin-bottom: -20px;
+  }
+
+  .me {
+    @include breakpoint($break-small) {
+      height: 400px;
+    }
+
+    height: 200px;
+
+    .contain {
+      position: absolute;
+      width: 100%;
+
+      #me-header {
+        position: relative;
+
+        @include breakpoint($break-small) {
+          height: 400px;
+        }
+
+        height: 200px;
+      }
+
+      #me-caption {
+        position: relative;
+        top: -150px;
+        left: 50px;
+        width: 50%;
+
+        @include breakpoint($break-small) {
+          top: -300px;
+          left: 100px;
+          width: 30%;
+        }
+
+        h2 {
+          color: $default_font_color;
+        }
+      }
+    }
   }
 
   .slide-caption {
