@@ -61,6 +61,7 @@ gem 'thredded'
 gem 'mini_magick'
 gem 'image_processing'
 gem 'httparty', require: nil
+gem 'ckeditor'
 
 group :production, :staging do
   gem 'redis-rack-cache'

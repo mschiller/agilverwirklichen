@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CreateCkeditorAssets < ActiveRecord::Migration[5.2]
-  def self.up
+  def up
     create_table :ckeditor_assets do |t|
       t.string  :data_file_name, null: false
       t.string  :data_content_type
@@ -7,8 +9,9 @@ class CreateCkeditorAssets < ActiveRecord::Migration[5.2]
       t.string  :data_fingerprint
       t.string  :type, limit: 30
 
-      t.integer :width
-      t.integer :height
+      # Uncomment it to save images dimensions, if your need it
+      # t.integer :width
+      # t.integer :height
 
       t.timestamps null: false
     end
@@ -16,7 +19,7 @@ class CreateCkeditorAssets < ActiveRecord::Migration[5.2]
     add_index :ckeditor_assets, :type
   end
 
-  def self.down
+  def down
     drop_table :ckeditor_assets
   end
 end

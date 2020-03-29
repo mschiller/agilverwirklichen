@@ -156,6 +156,8 @@ GEM
       cells (>= 4.0.1, < 6.0.0)
       slim (>= 3.0)
     chronic (0.10.2)
+    ckeditor (5.1.0)
+      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     coderay (1.1.2)
     coffee-rails (5.0.0)
@@ -653,6 +655,7 @@ DEPENDENCIES
   capistrano3-puma
   cells-rails
   cells-slim
+  ckeditor
   coffee-rails
   comfortable_mexican_sofa
   delayed_paperclip

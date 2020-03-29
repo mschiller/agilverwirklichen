@@ -7,6 +7,8 @@
     "bootstrap-autohidingnavbar": "^4.0.0",
     "breakpoint-sass": "^2.7.1",
     "bxslider": "^4.2.14",
+    "ckeditor": "^4.12.1",
+    "ckeditor5": "^18.0.0",
     "clipboard": "^2.0.4",
     "coffee-loader": "^0.9.0",
     "coffeescript": "2.0.1",
@@ -26,6 +28,7 @@
     "rails-ujs": "^5.2.2",
     "select2": "^4.0.6-rc.1",
     "singularitygs": "^1.8.0",
+    "tinymce": "^5.2.1",
     "trix": "^1.0.0"
   },
   "devDependencies": {
