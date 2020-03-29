@@ -12,7 +12,7 @@ $(function () {
     randomStart: true,
     easing: 'swing',
     mode: 'horizontal',
-    preloadImages: 'all',
+    //preloadImages: 'all',
     hideControlOnEnd: true,
 
     onSliderLoad: function () {
