@@ -8,6 +8,6 @@ html
     main#content= yield
     .clear
     footer#footer
-      = cms_snippet_content("footer").html_safe
+      = render partial: 'shared/footer'
       .clear
   = render partial: 'layouts/footer'
