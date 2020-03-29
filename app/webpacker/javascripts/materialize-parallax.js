@@ -1,4 +1,4 @@
-import Component from './component';
+import Component from './materialize-component';
 
 (function($) {
   'use strict';

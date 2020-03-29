@@ -4,12 +4,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails'
+gem 'rails', '6.0.2.1'
 gem 'rails-i18n'
 gem 'bootsnap', require: false
 gem 'puma'
 gem 'mysql2'
 gem 'webpacker'
+#gem 'turbolinks', '~> 5'
 gem 'sassc'
 gem 'coffee-rails'
 gem 'sass-rails'
@@ -26,7 +27,6 @@ gem 'friendly_id'
 gem 'devise'
 gem 'activeadmin'
 gem 'arctic_admin'
-gem 'ckeditor'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'mini_racer'
@@ -96,4 +96,8 @@ group :development do
   gem 'bcrypt_pbkdf'
   gem 'pry-rails'
   gem 'pry-rescue'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  #gem 'spring'
+  #gem 'spring-watcher-listen', '~> 2.0.0'
 end

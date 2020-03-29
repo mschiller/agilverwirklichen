@@ -51,7 +51,7 @@ set :pty, true
 
 set :linked_files, %w{config/secrets.yml config/application.yml config/skylight.yml}
 set :linked_dirs, %w{.bundle log tmp/pids tmp/cache tmp/sockets vendor/bundle
-                     public/system public/sitemaps public/ckeditor_assets storage node_modules}
+                     public/system public/sitemaps storage node_modules}
 
 set :keep_releases, 20
 

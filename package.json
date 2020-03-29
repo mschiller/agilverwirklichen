@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.6.3",
+    "@rails/actiontext": "^6.0.2-1",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "4.2.2",
     "bootstrap-autohidingnavbar": "^4.0.0",
@@ -10,6 +11,7 @@
     "coffee-loader": "^0.9.0",
     "coffeescript": "2.0.1",
     "expose-loader": "^0.7.5",
+    "froala-editor": "^3.1.1",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.0",
     "lazyload": "^2.0.0-beta.2",
@@ -23,9 +25,10 @@
     "rails-erb-loader": "^5.5.1",
     "rails-ujs": "^5.2.2",
     "select2": "^4.0.6-rc.1",
-    "singularitygs": "^1.8.0"
+    "singularitygs": "^1.8.0",
+    "trix": "^1.0.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.10.3"
   }
 }

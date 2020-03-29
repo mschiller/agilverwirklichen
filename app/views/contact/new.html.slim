@@ -2,10 +2,12 @@ section.page-title
   h2
     |Kontakt
 section
+  br
   .contact_form
-    = simple_form_for @contact_form, :remote => true, :url => 'send_contact_form', method: :post do |f|
+    = simple_form_for @contact_form, url: { action:"create" }, html: { method: :post } do |f|
       = f.input :email
-      = f.input :content, :as => :text
+      = f.input :content, as: :text, label: '', input_html: { id: 'editor'}
+      /, as: :rich_text_area 
       = rucaptcha_input_tag(class: 'form-control', placeholder: 'Captcha hier eingeben')
       = rucaptcha_image_tag(alt: 'Captcha')
       .actions

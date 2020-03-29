@@ -34,7 +34,6 @@ solr/
 *.pid
 /.sass-cache/
 public/assets/
-public/ckeditor_assets/
 public/sitemaps/
 public/system/
 public/packs/

@@ -123,6 +123,7 @@ GEM
     bullet (6.1.0)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
+    byebug (11.1.1)
     cancancan (3.0.2)
     capistrano (3.12.0)
       airbrussh (>= 1.0.0)
@@ -155,8 +156,6 @@ GEM
       cells (>= 4.0.1, < 6.0.0)
       slim (>= 3.0)
     chronic (0.10.2)
-    ckeditor (5.1.0)
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     coderay (1.1.2)
     coffee-rails (5.0.0)
@@ -646,6 +645,7 @@ DEPENDENCIES
   bootsnap
   browser
   bullet
+  byebug
   cancancan
   capistrano-rails
   capistrano-rbenv
@@ -653,7 +653,6 @@ DEPENDENCIES
   capistrano3-puma
   cells-rails
   cells-slim
-  ckeditor
   coffee-rails
   comfortable_mexican_sofa
   delayed_paperclip
@@ -690,7 +689,7 @@ DEPENDENCIES
   puma
   rack-protection
   rack-rewrite
-  rails
+  rails (= 6.0.2.1)
   rails-assets-picturefill!
   rails-i18n
   redis-rack-cache
