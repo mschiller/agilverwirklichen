@@ -4,4 +4,8 @@ section.newsletter {
   background: linear-gradient(to right,
       #f2f4f4 0%,
       white 100%);
+
+  input[type="text"] {
+    width: 96%;
+  }
 }
