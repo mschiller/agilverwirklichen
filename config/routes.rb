@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get "/news/feed", to: "feeds#news", defaults: { format: "atom" }, as: "newsfeed"
 
-  post "/send_contact_form", to: "application#send_contact_form"
+  get "/kontakt" => "home#contact"
+  post "/send_contact_form", to: "home#send_contact_form"
 
   authenticate :user do
     resources :profiles, only: [:show, :update] do
@@ -17,7 +18,6 @@ Rails.application.routes.draw do
 
   get "/error_test", to: "errors#test", as: "error_test"
   get "sitemap.xml" => "home#sitemap", format: :xml, as: :sitemap
-  get "/kontakt" => "home#contact"
 
   mount Thredded::Engine => "/forum"
   mount Ckeditor::Engine => "/ckeditor"

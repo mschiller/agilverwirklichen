@@ -1,7 +1,6 @@
 class ApplicationController < ApplicationBaseController
   include ActionController::MobileFu
   include StrongParameterMethods
-  include ContactFormMethods
   include PaperTrailMethods
   include AjaxFlashMethods
   include CacheHelper
@@ -22,7 +21,7 @@ class ApplicationController < ApplicationBaseController
   end
 
   def user_for_paper_trail
-    user_signed_in? ? current_user.id : 'Public user'
+    user_signed_in? ? current_user.id : "Public user"
   end
 
   private
