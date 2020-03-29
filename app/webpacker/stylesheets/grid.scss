@@ -20,6 +20,9 @@ body {
 
   #content,
   #header_content {
+
+    margin-bottom: 40px;
+
     @include breakpoint($break-medium) {
       @include grid-span(1, 2);
     }
