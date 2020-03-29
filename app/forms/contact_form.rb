@@ -1,15 +1,11 @@
 class ContactForm
-  #include ActionText::Attribute
-  #include ActiveRecord::Associations
   include ActiveModel::Validations
-
-  #has_rich_text :content
 
   validates :email, presence: true, format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :content, presence: true
 
   # to deal with form, you must have an id attribute
-  attr_accessor :id, :email, :content
+  attr_accessor :id, :email, :telephone, :content
 
   def initialize(attributes = {})
     attributes.each do |key, value|
@@ -31,7 +27,7 @@ class ContactForm
 
   def save
     if self.valid?
-      Notifier.contact_form_notification(self.email, self.content).deliver_later
+      Notifier.contact_form_notification(self.email, self.telephone, self.content).deliver_later
       return true
     end
     return false

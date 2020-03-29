@@ -14,9 +14,10 @@ de:
     # Labels and hints examples
     labels:
       defaults:
-        email: 'Deine E-Mail Adresse'
-        content: 'Deine Anfrage oder Hinweise'
-        password: 'Dein Passwort'
+        email: 'Ihre E-Mail Adresse'
+        telephone: 'Ihre Telefonnummer'
+        content: 'Ihre Anfrage oder Hinweise'
+        password: 'Ihr Passwort'
       #user:
       #  new:
       #    email: 'E-mail para efetuar o sign in.'
@@ -29,6 +30,7 @@ de:
     #        content: 'Bitte gib hier Deine Anfrage oder Hinweise ein.'
     #        password: 'No special characters, please.'
     placeholders:
-      email: 'Deine E-Mail Adresse'
-      content: 'Hast Du noch weitere Fragen oder Hinweise?'
+      email: 'Ihre E-Mail Adresse'
+      telephone: 'Ihre Telefonnummer'
+      content: 'Haben Sie noch weitere Fragen oder Hinweise?'
       password: '*******'

@@ -9,7 +9,7 @@ section
   .contact_form
     = simple_form_for @contact_form, url: { action:"create" }, html: { method: :post } do |f|
       = f.input :email
-      = f.input :email
+      = f.input :telephone
       = f.input :content, label: '', as: :ckeditor, input_html: { ckeditor: { } }
       = rucaptcha_input_tag(class: 'form-control', placeholder: 'Captcha hier eingeben')
       = rucaptcha_image_tag(alt: 'Captcha')
