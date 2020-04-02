@@ -12,6 +12,7 @@ $(function () {
     randomStart: true,
     easing: 'swing',
     mode: 'horizontal',
+    //adaptiveHeight: true,
     //preloadImages: 'all',
     hideControlOnEnd: true,
 
@@ -28,7 +29,13 @@ var xSeconds = 3000; // 2 second
 
 function resize() {
   var heights = window.innerHeight;
-  document.getElementById("js_full_teaser").style.height = (heights - 185) + "px";
+  var js_full_teaser = $("#js_full_teaser")
+  if (typeof (js_full_teaser) != 'undefined' && js_full_teaser != null) {
+    js_full_teaser.css("height", (heights - 185) + "px");
+
+    $(".bxslider").css("height", heights / 2);
+    $(".bx-clone").css("height", heights / 2);
+  }
 }
 
 $(document).ready(function () {

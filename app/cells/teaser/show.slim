@@ -13,3 +13,11 @@
                     ' 
                     ' #{teaser.description}
                     i.fa.fa-angle-double-left
+          - else
+            - unless teaser.description.blank?
+              .bx-caption
+                span
+                  i.fa.fa-angle-double-right
+                  ' 
+                  ' #{teaser.description}
+                  i.fa.fa-angle-double-left
