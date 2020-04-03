@@ -7,16 +7,11 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 
 @import '~froala-editor/css/froala_editor';
 
-.fa,
-.fas {
-  font-size: 1em;
-}
-
 @import '../stylesheets/constants';
 @import '../stylesheets/mixins';
 @import '../stylesheets/defaults';
 @import '../stylesheets/materialize';
-
+@import '../stylesheets/bumped_arrow';
 @import '../stylesheets/landing_page';
 @import '../stylesheets/cookies_eu';
 @import '../stylesheets/description_box';
