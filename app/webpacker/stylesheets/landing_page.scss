@@ -115,11 +115,6 @@
       margin: 0 0 17px;
       text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5);
       letter-spacing: 0.5px;
-      display: none;
-
-      @include breakpoint($break-medium) {
-        display: block;
-      }
     }
 
     .flex-btn {
@@ -128,16 +123,6 @@
       @include breakpoint($break-medium) {
         font-size: 100% !important;
       }
-    }
-  }
-
-  p {
-    margin: 0 0 17px;
-    display: none;
-    text-align: justify;
-
-    @include breakpoint($break-medium) {
-      display: block;
     }
   }
 }
