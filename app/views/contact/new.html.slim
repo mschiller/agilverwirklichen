@@ -6,7 +6,6 @@ section.page-title
     |Kontakt
 section
 .left_column
-    br
     .contact_form
       = simple_form_for @contact_form, url: { action:"create" }, html: { method: :post } do |f|
         = f.input :email
