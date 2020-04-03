@@ -84,6 +84,7 @@ textarea.materialize-textarea {
     &:hover,
     &:active,
     &.btn.active,
+    &:visited,
     &:focus {
       background-color: $primary_calltoaction_border;
       color: #FFFFFF !important;
