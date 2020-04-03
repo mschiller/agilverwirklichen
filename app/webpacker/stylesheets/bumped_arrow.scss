@@ -1,6 +1,12 @@
 .downArrow {
-  top: -200px;
   position: relative;
+  top: -150px;
+
+  @media only screen and (max-width : 992px) {
+    span {
+      top: -200px;
+    }
+  }
 }
 
 .bounce {
@@ -8,6 +14,8 @@
   -webkit-animation: bounce 3s infinite;
   animation: bounce 3s infinite;
 }
+
+// not working after compilation!
 
 @-moz-keyframes bounce {
 
