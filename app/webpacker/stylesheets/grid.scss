@@ -44,11 +44,11 @@ body {
       @include grid-span(1, 1);
       margin-top: 20px;
 
-      .cms_content {
-        width: 75%;
-      }
-
       @include breakpoint($break-small) {
+        .cms_content {
+          width: 75%;
+        }
+
         @include grid-span(1, 5);
         margin-top: 20px;
       }
