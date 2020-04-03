@@ -12,6 +12,7 @@ $(function () {
     randomStart: true,
     easing: 'swing',
     mode: 'horizontal',
+    touchEnabled: false,
     //adaptiveHeight: true,
     //preloadImages: 'all',
     hideControlOnEnd: false,
@@ -37,7 +38,3 @@ $(function () {
 //     $('#js_fade_header').fadeIn('slow');
 //   }, xSeconds);
 // });
-
-// window.onresize = function () {
-//   resize();
-// };
