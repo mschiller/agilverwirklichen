@@ -4,17 +4,10 @@
 ===================================*/
 .bx-wrapper {
 	position: relative;
-	margin-top: 40px;
-	margin-bottom: 60px;
 	padding: 0;
 	*zoom: 1;
 	-ms-touch-action: pan-y;
 	touch-action: pan-y;
-}
-
-.bx-wrapper img {
-	max-width: 100%;
-	display: block;
 }
 
 .bxslider {

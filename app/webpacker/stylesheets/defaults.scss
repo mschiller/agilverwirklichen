@@ -13,10 +13,19 @@ body {
   color: $default_font_color;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-
+  width: 100%;
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
+}
+
+.header-title {
+  color: $footer_text_color;
+  text-align: center;
+  padding: 5px 20px;
+  height: 70px;
+  background: -webkit-gradient(linear, left top, right top, from($footer_background_color), to(white));
+  background: linear-gradient(to left, $footer_background_color 30%, white 100%);
 }
 
 .announcement {

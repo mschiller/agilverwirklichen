@@ -1,23 +1,11 @@
 - unless @teasers.empty?
   #teaser
-    ul.bxslider
+    ul#slider.bxslider
       - @teasers.each do |teaser|
         li
-          - if teaser.image.exists?
-            .image= image_with_source_tag(teaser.image, { alt: teaser.name })
-            - unless is_mobile_device?
-              - unless teaser.description.blank?
-                .bx-caption
-                  span
-                    i.fa.fa-angle-double-right
-                    ' 
-                    ' #{teaser.description}
-                    i.fa.fa-angle-double-left
-          - else
-            - unless teaser.description.blank?
-              .bx-caption
-                span
-                  i.fa.fa-angle-double-right
-                  ' 
-                  ' #{teaser.description}
-                  i.fa.fa-angle-double-left
+          .vertical-align-wrapper
+            span
+              i.fa.fa-angle-double-right
+              ' 
+              ' #{teaser.description}
+              i.fa.fa-angle-double-left
