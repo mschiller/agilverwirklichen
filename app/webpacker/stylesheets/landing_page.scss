@@ -23,11 +23,11 @@
   }
 
   .me {
-    @include breakpoint($break-small) {
-      height: 400px;
+    @include breakpoint($break-medium) {
+      height: 500px;
     }
 
-    height: 200px;
+    height: 250px;
 
     .contain {
       position: absolute;
@@ -36,11 +36,11 @@
       #me-header {
         position: relative;
 
-        @include breakpoint($break-small) {
-          height: 400px;
+        @include breakpoint($break-medium) {
+          height: 500px;
         }
 
-        height: 200px;
+        height: 300px;
       }
 
       #me-caption {
@@ -77,7 +77,7 @@
     top: 22%;
     width: 50%;
 
-    @include breakpoint($break-small) {
+    @include breakpoint($break-medium) {
       top: 50%;
       width: 30%;
     }
@@ -92,7 +92,7 @@
       font-size: 12px;
       line-height: 12px;
 
-      @include breakpoint($break-small) {
+      @include breakpoint($break-medium) {
         font-size: 30px;
         line-height: inherit;
         margin: 0 0 16px;
@@ -117,7 +117,7 @@
     .flex-btn {
       font-size: 75% !important;
 
-      @include breakpoint($break-small) {
+      @include breakpoint($break-medium) {
         font-size: 100% !important;
       }
     }

@@ -18,12 +18,13 @@
   span {
     display: table-cell;
     vertical-align: middle;
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   @media only screen and (max-width : 992px) {
     span {
-      font-size: 2.5rem;
+      margin: 50px;
+      font-size: 2.2rem;
     }
   }
 }
