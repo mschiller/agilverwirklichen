@@ -6,6 +6,7 @@ section.blog {
   }
 
   .date {
+    color: darkgray;
     font-style: italic;
     font-size: 13px;
   }
@@ -14,6 +15,8 @@ section.blog {
 section.post {
   .header {
     font-style: italic;
+    color: darkgray;
+    font-size: 13px;
   }
 
   p {

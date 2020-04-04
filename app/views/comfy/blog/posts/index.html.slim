@@ -5,7 +5,10 @@ section.blog
   .left_column
       - @blog_posts.each do |post|
         .post
-          .date= post.published_at.to_formatted_s(:long)
+          .date
+            =' post.published_at.to_formatted_s(:long)
+            | Tags: 
+            = post.categories.all.map(&:label).join(', ')
           h2 = link_to post.title, comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug)
           p = PostDecorator.decorate(post).index_content
           p = link_to 'Lesen Sie weiter', comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug), class: 'btn primary'
@@ -13,6 +16,7 @@ section.blog
 
   .right_column
       h3 Archive
+      ul
       - dates_with_counts = @cms_site.blog_posts.published.group(:year, :month).order(year: :desc, month: :desc).count
       - dates_with_counts.each do |(year, month), count|
         li
@@ -22,5 +26,6 @@ section.blog
           small (# count )
 
       h3 Tags
-      - Comfy::Cms::Category.of_type('Comfy::Blog::Post').all.each do |tag|
-        = link_to tag.label, category: tag.label
+      ul
+        - Comfy::Cms::Category.of_type('Comfy::Blog::Post').all.each do |tag|
+          li= link_to tag.label, category: tag.label
