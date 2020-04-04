@@ -1,13 +1,7 @@
 .downArrow {
   position: absolute;
   left: 50%;
-  bottom: 200px;
-
-  @media only screen and (max-width : 992px) {
-    span {
-      bottom: 150px;
-    }
-  }
+  bottom: 120px;
 }
 
 .bounce {
