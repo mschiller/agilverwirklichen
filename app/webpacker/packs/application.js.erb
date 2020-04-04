@@ -8,6 +8,11 @@ import 'lazyload';
 let images = document.querySelectorAll(".lazyload");
 lazyload(images);
 
+import smoothscroll from 'smoothscroll-polyfill';
+
+// kick off the polyfill!
+smoothscroll.polyfill();
+
 import '../javascripts/globals';
 import '../javascripts/navigation';
 import '../javascripts/messages.js';
