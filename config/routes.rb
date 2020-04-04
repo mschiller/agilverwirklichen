@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
+  mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   ActiveAdmin.routes(self)
@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   mount Thredded::Engine => "/forum"
 
+  comfy_route :blog, path: "/blog"
+  comfy_route :blog_admin, path: "/blog-admin"
   comfy_route :cms_admin, :path => "/cms"
   comfy_route :cms, path: "/", :sitemap => false
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_29_160321) do
+ActiveRecord::Schema.define(version: 2020_04_03_153853) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -66,6 +66,23 @@ ActiveRecord::Schema.define(version: 2020_03_29_160321) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "comfy_blog_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "site_id", null: false
+    t.string "title", null: false
+    t.string "slug", null: false
+    t.integer "layout_id"
+    t.text "content_cache", size: :medium
+    t.integer "year", null: false
+    t.integer "month", limit: 2, null: false
+    t.boolean "is_published", default: true, null: false
+    t.datetime "published_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["created_at"], name: "index_comfy_blog_posts_on_created_at"
+    t.index ["site_id", "is_published"], name: "index_comfy_blog_posts_on_site_id_and_is_published"
+    t.index ["year", "month", "slug"], name: "index_comfy_blog_posts_on_year_and_month_and_slug"
   end
 
   create_table "comfy_cms_blocks", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|

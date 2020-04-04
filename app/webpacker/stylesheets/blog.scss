@@ -1,0 +1,22 @@
+section.blog {
+  .post {
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .date {
+    font-style: italic;
+    font-size: 13px;
+  }
+}
+
+section.post {
+  .header {
+    font-style: italic;
+  }
+
+  p {
+    text-align: justify;
+  }
+}

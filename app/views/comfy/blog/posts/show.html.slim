@@ -1,0 +1,9 @@
+section.post
+  .page-title
+    h1= @cms_post.title
+
+  p.header
+    i.fa.fa-calendar-alt
+    =< @cms_post.published_at.to_formatted_s(:short)
+
+  = @cms_post.content_cache.html_safe
