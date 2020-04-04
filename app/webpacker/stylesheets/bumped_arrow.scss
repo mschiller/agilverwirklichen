@@ -1,18 +1,26 @@
 .downArrow {
-  position: relative;
-  top: -150px;
+  position: absolute;
+  left: 50%;
+  bottom: 200px;
 
   @media only screen and (max-width : 992px) {
     span {
-      top: -200px;
+      bottom: 150px;
     }
   }
 }
 
 .bounce {
+  position: relative;
+  right: 30px;
   -moz-animation: bounce 3s infinite;
   -webkit-animation: bounce 3s infinite;
   animation: bounce 3s infinite;
+
+  img {
+    height: 60px;
+    width: 60px;
+  }
 }
 
 // not working after compilation!
