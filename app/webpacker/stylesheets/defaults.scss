@@ -100,6 +100,10 @@ ul:not(.nolist) {
     &.cross:before {
       content: "\f00d";
     }
+
+    &.conf:before {
+      content: "\f013" !important;
+    }
   }
 }
 
