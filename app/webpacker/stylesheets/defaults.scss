@@ -70,6 +70,10 @@ h3 {
   font-size: 1.6rem !important;
 }
 
+li {
+  line-height: 2em;
+}
+
 ul:not(.nolist) {
   li {
     list-style-type: none;
