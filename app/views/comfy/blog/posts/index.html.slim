@@ -5,11 +5,11 @@ section.blog
   .left_column
       - @blog_posts.each do |post|
         .post
+          h2 = link_to post.title, comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug)
           .date
             =' post.published_at.to_formatted_s(:long)
             | Tags: 
             = post.categories.all.map(&:label).join(', ')
-          h2 = link_to post.title, comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug)
           p = PostDecorator.decorate(post).index_content
           p = link_to 'Lesen Sie weiter', comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug), class: 'btn primary'
       = comfy_paginate @blog_posts
