@@ -66,6 +66,7 @@ textarea.materialize-textarea {
   &:hover,
   &:active,
   &.btn.active,
+  &:visited,
   &:focus {
     text-decoration: none !important;
     background-color: $secondary_calltoaction_background;
@@ -87,7 +88,7 @@ textarea.materialize-textarea {
     &:visited,
     &:focus {
       background-color: $primary_calltoaction_border;
-      color: #FFFFFF !important;
+      color: $primary_calltoaction_color !important;
     }
   }
 
