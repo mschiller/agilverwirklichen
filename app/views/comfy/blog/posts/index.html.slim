@@ -1,11 +1,11 @@
 section.page-title
-    h2 Blog
+    h2 = title 'Blog'
 
 section.blog
   .left_column
       - @blog_posts.each do |post|
         .post
-          .date= post.published_at.to_s(:db)
+          .date= post.published_at.to_formatted_s(:long)
           h2 = link_to post.title, comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug)
           p = PostDecorator.decorate(post).index_content
           p = link_to 'Lesen Sie weiter', comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug), class: 'btn primary'

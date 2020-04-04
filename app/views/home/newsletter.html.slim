@@ -1,7 +1,3 @@
-- content_for :content_header do
-  = header_image_with_source_tag('imprint.jpg', alt: "#{t('activerecord.models.newsletter')} | #{Figaro.env.app_header}", class: :full_width).html_safe
-  h1= title t('header.newsletter')
-
 .left_column
   .sub_list
     = cms_snippet_content('newsletter-form-text', @cms_site).html_safe
