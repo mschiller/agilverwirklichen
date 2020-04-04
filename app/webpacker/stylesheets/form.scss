@@ -42,13 +42,19 @@ textarea.materialize-textarea {
   vertical-align: middle;
 }
 
-.btn {
+.btn,
+a.btn,
+a.btn:hover,
+a.btn:active,
+a.btn.btn.active,
+a.btn:visited,
+a.btn:focus {
   background-color: $secondary_calltoaction_background;
   background-repeat: no-repeat;
   border-color: $secondary_calltoaction_border;
   border-style: solid;
   border-width: 1px;
-  color: $secondary_calltoaction_color !important;
+  color: $secondary_calltoaction_color;
   cursor: pointer;
   display: inline-block;
   line-height: normal;
@@ -59,20 +65,6 @@ textarea.materialize-textarea {
   -webkit-appearance: none;
   border-radius: 3px;
 
-  &a {
-    color: $secondary_calltoaction_color;
-  }
-
-  &:hover,
-  &:active,
-  &.btn.active,
-  &:visited,
-  &:focus {
-    text-decoration: none !important;
-    background-color: $secondary_calltoaction_background;
-    color: $secondary_calltoaction_color;
-  }
-
   &.left {
     float: left;
   }
@@ -80,16 +72,7 @@ textarea.materialize-textarea {
   &.primary {
     background-color: $primary_calltoaction_background;
     border-color: $primary_calltoaction_border;
-    color: $primary_calltoaction_color !important;
-
-    &:hover,
-    &:active,
-    &.btn.active,
-    &:visited,
-    &:focus {
-      background-color: $primary_calltoaction_border;
-      color: $primary_calltoaction_color !important;
-    }
+    color: white !important; //workaround!
   }
 
   &.disabled {

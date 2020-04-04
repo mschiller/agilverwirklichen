@@ -66,6 +66,14 @@ body {
   }
 }
 
+h3 {
+  font-size: 1.6rem !important;
+}
+
+li {
+  list-style-type: none;
+}
+
 strong {
   font-weight: 700 !important;
 }
@@ -87,10 +95,10 @@ a:visited {
   outline: none 0;
   color: $link_color;
   text-decoration: none;
+}
 
-  &:hover {
-    color: $link_hover_color;
-  }
+a:hover {
+  color: $link_hover_color;
 }
 
 blockquote {
