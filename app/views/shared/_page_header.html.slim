@@ -15,10 +15,10 @@
               =< t('navigation.admin')
           = yield :admin_menu
         - if user_signed_in?
-          li.entry= link_to main_app.profile_path(current_user), rel: :nofollow do
+          li.nolist.entry= link_to main_app.profile_path(current_user), rel: :nofollow do
             i.fa.fa-user
         - else
-          li.entry= link_to main_app.new_user_session_path, rel: :nofollow do
+          li.nolist.entry= link_to main_app.new_user_session_path, rel: :nofollow do
             i.fa.fa-user
     
     .toggle-mobile-menu

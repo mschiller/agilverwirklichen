@@ -83,6 +83,14 @@ h2 {
 
 li {
   line-height: 2em;
+
+  &.nolist {
+    padding-left: 0 !important;
+
+    &:before {
+      content: none !important;
+    }
+  }
 }
 
 ul:not(.nolist) {
