@@ -31,7 +31,7 @@
       height: 600px;
     }
 
-    height: 200px;
+    height: 300px;
 
     .contain {
       position: absolute;
@@ -52,19 +52,19 @@
       }
 
       #me-caption {
-        position: relative;
-        top: -220px;
+        position: absolute;
+        bottom: 40px;
         left: 30px;
         width: 60%;
 
         .flex-btn {
-          margin-top: 5px;
+          margin-top: 15px;
+          margin-right: 15px;
         }
 
         @include breakpoint($break-medium) {
           left: 20%;
           width: 30%;
-          top: -343px;
         }
 
         h2 {
