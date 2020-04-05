@@ -20,7 +20,6 @@ app_name: ''
 app_header: ''
 email: ''
 company_name: ''
-protocol: ''
 with_profiling: ''
 
 rapidmail_api_user: ''
