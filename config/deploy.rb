@@ -11,6 +11,9 @@ task :tail_logs do
   end
 end
 
+set :rbenv_type, :user
+set :rbenv_ruby, "2.6.0"
+
 set :application, @figaro.env.app_name
 set :repo_url, @figaro.env.git_respository
 
@@ -60,8 +63,10 @@ set :ssh_options, {
   user: fetch(:user),
 }
 
+set :whenever_command, "bundle exec whenever"
 set :whenever_roles, -> { [:app] }
 set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
+#require "whenever/capistrano"
 
 namespace :cache do
   task :clear do
