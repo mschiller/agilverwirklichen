@@ -10,7 +10,7 @@ gem 'bootsnap', require: false
 gem 'puma'
 gem 'mysql2'
 gem 'webpacker'
-#gem 'turbolinks', '~> 5'
+gem 'jquery-rails'
 gem 'sassc'
 gem 'coffee-rails'
 gem 'sass-rails'

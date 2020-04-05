@@ -1,0 +1,21 @@
+doctype html
+html
+  = render partial: 'layouts/header'
+  = stylesheet_link_tag 'timeline'
+  body
+    header#header
+      = render partial: 'shared/page_header'
+    = render 'shared/content_header_margin'
+    main#content= yield
+    .clear
+    = cms_snippet_content('newsletter-anmeldung', @cms_site).html_safe
+    footer#footer
+      = render partial: 'shared/footer'
+      .clear
+  = render partial: 'layouts/footer'
+  = javascript_include_tag 'jquery'
+  = javascript_include_tag 'timeline/jquery.prettyPhoto'
+  = javascript_include_tag 'timeline/aos'
+  = javascript_include_tag 'timeline/ctl_scripts.min'
+  = javascript_include_tag 'timeline/masonry.pkgd.min'
+  = javascript_include_tag 'timeline/ctl_compact_scripts.min'

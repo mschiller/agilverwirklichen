@@ -678,6 +678,7 @@ DEPENDENCIES
   image_optim_rails
   image_processing
   jbuilder
+  jquery-rails
   kaminari
   launchy
   letter_opener_web
