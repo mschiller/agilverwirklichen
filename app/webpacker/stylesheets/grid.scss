@@ -21,7 +21,7 @@ body {
   #content,
   #header_content {
 
-    @include breakpoint($break-medium) {
+    @include breakpoint($break-large) {
       @include grid-span(1, 2);
     }
 

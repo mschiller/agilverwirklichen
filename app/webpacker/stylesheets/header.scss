@@ -18,7 +18,7 @@
     display: block;
     float: right;
 
-    @include breakpoint($break-medium) {
+    @include breakpoint($break-large) {
       display: none;
     }
 
@@ -38,7 +38,7 @@
   #header_content {
     text-align: center;
 
-    @include breakpoint($break-medium) {
+    @include breakpoint($break-large) {
       text-align: left;
     }
 
@@ -53,6 +53,12 @@
         color: $header_text_color;
         float: right;
         margin-top: 18px;
+        display: none;
+
+        @include breakpoint($break-large) {
+          display: block;
+        }
+
 
         &:hover {
           background-color: $header_background;
@@ -170,7 +176,7 @@
     display: none;
     line-height: 2.2em;
 
-    @include breakpoint($break-medium) {
+    @include breakpoint($break-large) {
       display: block;
       padding: 0 1em 0;
       height: 2.5em;
@@ -186,7 +192,7 @@
         font-weight: bold;
       }
 
-      @include breakpoint($break-medium) {
+      @include breakpoint($break-large) {
         float: left;
       }
     }
