@@ -1,4 +1,4 @@
-= semantic_navigation :primary, id: 'main_navigation', class: 'hover_menu js-hover_menu'  do |n|
+= semantic_navigation :primary, id: 'main_navigation', class: 'hover_menu js-hover_menu nolist'  do |n|
   #header_content 
     = cms_snippet_content('main_navbar').html_safe
     - if user_signed_in? and current_user.admin?
