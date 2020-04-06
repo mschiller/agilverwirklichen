@@ -1,0 +1,42 @@
+/*
+*= require_tree ./timeline
+*= require_self
+*/
+
+.ultimate-style .timeline-post.timeline-mansory .timeline-content .content-title {
+  bottom: 36px;
+  background: #5ca2df;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .ultimate-style .timeline-post.timeline-mansory.ctl-left .timeline-content .content-title::after,
+  .ultimate-style .timeline-post.timeline-mansory.ctl-right .timeline-content .content-title::after {
+    border-left-color: #5ca2df;
+  }
+
+  .ultimate-style .timeline-post.timeline-mansory.ctl-left .timeline-content .content-title::after,
+  .ultimate-style .timeline-post.timeline-mansory.ctl-right .timeline-content .content-title::after {
+    border-left-color: #5ca2df;
+  }
+
+  .ultimate-style .timeline-post.timeline-mansory.ctl-right .timeline-content .content-title::after {
+    border-right-color: #5ca2df;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .ultimate-style .timeline-post.timeline-mansory.ctl-left .timeline-content .content-title::after {
+    border-right-color: #5ca2df;
+  }
+}
+
+.timeline-post.timeline-mansory .ctl_info .content-title-cmt {
+  margin-top: -30px !important;
+}
+
+.cool-timeline .timeline-post .timeline-content .content-details ul li {
+  list-style-type: none;
+}
