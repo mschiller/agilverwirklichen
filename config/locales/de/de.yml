@@ -39,8 +39,6 @@ de:
       subject: "Kontaktanfrage von %{from_email} am %{datetime}"
       header: "Folgende Kontaktanfrage wurde über die Internetseite gestellt"
       send: "Absenden"
-  newsletter:
-    accept: 'Ich bin damit einverstanden, dass meine personenbezogenen Daten für Werbezwecke verarbeitet werden und eine werbliche Ansprache per E-Mail erfolgt. Die erteilte Einwilligung kann ich jederzeit mit Wirkung für die Zukunft in jeder angemessenen Form widerrufen. Hier geht es zu unseren %{link}.'
 
   errors:
     messages:
@@ -84,7 +82,6 @@ de:
         one: 'Benutzerrolle'
         other: 'Benutzerrollen'
       imprint: 'Impressum'
-      newsletter: 'Newsletter'
   users:
     sessions:
       new:

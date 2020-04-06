@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-  include RuCaptcha::ViewHelpers
-
   def sitemap
     path = Rails.root.join("public", "sitemaps", "sitemap.xml")
     if File.exists?(path)
@@ -12,15 +10,5 @@ class HomeController < ApplicationController
 
   def robots
     render "home/robots.text.erb"
-  end
-
-  def newsletter
-    render
-  end
-
-  def import
-    Customer.reset_newsletter_flag
-    CustomerImporter.new.update_customers
-    render text: "DONE"
   end
 end

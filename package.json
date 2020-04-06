@@ -14,7 +14,6 @@
     "coffeescript": "2.0.1",
     "cookieconsent": "3",
     "expose-loader": "^0.7.5",
-    "froala-editor": "^3.1.1",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.0",
     "lazyload": "^2.0.0-beta.2",
