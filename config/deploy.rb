@@ -63,7 +63,6 @@ set :ssh_options, {
   user: fetch(:user),
 }
 
-set :whenever_command, "bundle exec whenever"
 set :whenever_roles, -> { [:app] }
 set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 #require "whenever/capistrano"
