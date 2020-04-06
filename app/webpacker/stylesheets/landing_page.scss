@@ -57,7 +57,7 @@
         left: 30px;
         width: 60%;
 
-        .flex-btn {
+        .btn {
           margin-top: 15px;
           margin-right: 15px;
         }
@@ -117,7 +117,7 @@
       letter-spacing: 0.5px;
     }
 
-    .flex-btn {
+    .btn {
       font-size: 75% !important;
 
       @include breakpoint($break-medium) {

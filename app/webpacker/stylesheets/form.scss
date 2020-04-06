@@ -21,25 +21,6 @@ textarea.materialize-textarea {
   transition: border-color;
 }
 
-.flex-btn {
-  font-size: 16px !important;
-  background-color: $primary_calltoaction_background;
-  color: $primary_calltoaction_color;
-  border-radius: 5px;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 400;
-  transition: all 0.3s ease-in-out 0s;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  line-height: 20px;
-  padding: 10px 25px;
-  margin: 0;
-  text-align: center;
-  vertical-align: middle;
-}
-
 .btn,
 a.btn,
 a.btn:hover,
