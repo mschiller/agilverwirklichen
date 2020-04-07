@@ -5,7 +5,9 @@
 .bx-wrapper {
 	position: relative;
 	padding: 0;
-	*zoom: 1;
+	//*zoom: 1;
+	transform: scale(1);
+	transform-origin: 0 0;
 	-ms-touch-action: pan-y;
 	touch-action: pan-y;
 }
@@ -88,7 +90,9 @@ ul.bxslider {
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
 	display: inline-block;
 	vertical-align: bottom;
-	*zoom: 1;
+	//*zoom: 1;
+	transform: scale(1);
+	transform-origin: 0 0;
 	*display: inline;
 }
 
