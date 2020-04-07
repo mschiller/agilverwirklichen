@@ -7,7 +7,7 @@ Rails.application.config.content_security_policy do |p|
   p.font_src :self, :https, :data
   p.img_src :self, :https, :data, "https://images.provenexpert.com", "https://provenexpert.com", "https://www.google-analytics.com"
   p.object_src :none
-  p.script_src :self, :https, :unsafe_inline, "https://calendly.com", "https://www.google-analytics.com"
+  p.script_src :self, :https, :unsafe_inline, :unsafe_eval, "https://calendly.com", "https://www.google-analytics.com"
   p.style_src :self, :https, :unsafe_inline
 
   # Specify URI for violation reports
