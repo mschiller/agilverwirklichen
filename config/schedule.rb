@@ -14,7 +14,7 @@ when "production"
   end
 
   every 1.day, at: "4:00 am", :roles => [:app] do
-    command "cd #{Dir.pwd}/public/system/b8545e1a72a8ca899b491ea2b6e0/; wget https://images.provenexpert.com/ba/01/b8545e1a72a8ca899b491ea2b6e0/widget_square_165_de_1.png"
+    command "cd #{Dir.pwd}/public/system/b8545e1a72a8ca899b491ea2b6e0/; wget -q -N --timestamping https://images.provenexpert.com/ba/01/b8545e1a72a8ca899b491ea2b6e0/widget_square_165_de_1.png"
   end
 
   every 1.day, at: "5:00 am", :roles => [:app] do
