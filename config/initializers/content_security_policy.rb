@@ -5,7 +5,7 @@
 Rails.application.config.content_security_policy do |p|
   p.default_src :self, :https
   p.font_src :self, :https, :data
-  p.img_src :self, :https, :data, "https://images.provenexpert.com", "https://provenexpert.com", "https://www.google-analytics.com"
+  p.img_src :self, :https, :data, :unsafe_inline, :unsafe_eval, "https://images.provenexpert.com", "https://provenexpert.com", "https://www.google-analytics.com"
   p.object_src :none
   p.script_src :self, :https, :unsafe_inline, :unsafe_eval, "https://calendly.com", "https://www.google-analytics.com"
   p.style_src :self, :https, :unsafe_inline
@@ -19,4 +19,4 @@ end
 # Report CSP violations to a specified URI
 # For further information see the following documentation:
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only
-# Rails.application.config.content_security_policy_report_only = true
+Rails.application.config.content_security_policy_report_only = true
