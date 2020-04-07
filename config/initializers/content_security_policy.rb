@@ -4,11 +4,11 @@
 
 Rails.application.config.content_security_policy do |p|
   p.default_src :self, :https
-  p.font_src :self, :https, :data
-  p.img_src :self, :https, :data
+  p.font_src :self, :https, :data, "www.provenexpert.com"
+  p.img_src :self, :https, :data, "www.provenexpert.com"
   p.object_src :none
-  p.script_src :self, :https, :unsafe_eval, :unsafe_inline
-  p.style_src :self, :https, :unsafe_inline
+  p.script_src :self, :https, :unsafe_eval, :unsafe_inline, "www.provenexpert.com"
+  p.style_src :self, :https, :unsafe_inline, "www.provenexpert.com"
 
   # Specify URI for violation reports
   # p.report_uri "/csp-violation-report-endpoint"
