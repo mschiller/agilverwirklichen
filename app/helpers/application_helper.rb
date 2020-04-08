@@ -44,7 +44,7 @@ module ApplicationHelper
     end
 
     display_meta_tags :site => Figaro.env.app_header,
-                      title: content_for(:thredded_page_title) || options['page_title'] || @page_title || cms_fragment_content('title'),
+                      title: options['page_title'] || @page_title || cms_fragment_content('title'),
                       description: options['page_description'] || @page_description || cms_fragment_content('description'),
                       keywords: @page_keywords.present? ? @page_keywords : cms_fragment_content('keywords'),
                       noindex: (cms_fragment_content('noindex').blank? and @page_noindex.blank?) ? nil : true,

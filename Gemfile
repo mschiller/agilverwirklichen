@@ -58,7 +58,6 @@ gem 'dotenv-rails'
 gem 'rucaptcha'
 gem 'exception_notification'
 gem "skylight"
-gem 'thredded'
 gem 'mini_magick'
 gem 'image_processing'
 gem 'httparty', require: nil

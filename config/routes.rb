@@ -29,8 +29,6 @@ Rails.application.routes.draw do
   get "/error_test", to: "errors#test", as: "error_test"
   get "sitemap.xml" => "home#sitemap", format: :xml, as: :sitemap
 
-  mount Thredded::Engine => "/forum"
-
   comfy_route :blog, path: "/blog"
   comfy_route :blog_admin, path: "/blog-admin"
   comfy_route :cms_admin, :path => "/cms"
