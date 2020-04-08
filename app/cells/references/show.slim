@@ -1,0 +1,9 @@
+- unless @references.empty?
+  #references
+    #slider.bxslider
+      - @references.each do |reference|
+        div
+          i.fa.fa-angle-double-right
+          ' 
+          ' #{reference.html}
+          i.fa.fa-angle-double-left

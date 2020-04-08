@@ -26,6 +26,8 @@
     "postcss-cssnext": "^3.1.0",
     "rails-erb-loader": "^5.5.1",
     "rails-ujs": "^5.2.2",
+    "react": "^16.13.1",
+    "react-jutsu": "^1.0.2",
     "select2": "^4.0.6-rc.1",
     "singularitygs": "^1.8.0",
     "smoothscroll-polyfill": "^0.4.4",

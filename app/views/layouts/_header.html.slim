@@ -11,9 +11,3 @@ head
   = yield :head
   = stylesheet_pack_tag '_application'
   = cms_snippet_content("header_includes").html_safe
-  - unless yield(:thredded_page_title).empty?
-    = stylesheet_link_tag 'thredded', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'thredded',
-      async: !Rails.application.config.assets.debug,
-        defer: true,
-          'data-turbolinks-track': 'reload'

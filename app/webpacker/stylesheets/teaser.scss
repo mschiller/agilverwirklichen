@@ -1,5 +1,5 @@
 #teaser,
-#slider,
+#teaser #slider,
 .image,
 .vertical-align-wrapper {
   width: 100%;
@@ -8,6 +8,19 @@
   .fa,
   .fas {
     font-size: 70%;
+  }
+
+  .bx-wrapper .bx-prev {
+    display: none;
+  }
+
+  .bx-wrapper .bx-next {
+    display: none;
+  }
+
+  .bx-controls {
+    top: -50px;
+    position: relative;
   }
 }
 
@@ -32,9 +45,4 @@
     }
 
   }
-}
-
-.bx-controls {
-  top: -50px;
-  position: relative;
 }

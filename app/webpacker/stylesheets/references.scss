@@ -1,0 +1,20 @@
+#references {
+  border: 1px solid darkgray;
+  padding: 20px 20px 0 20px;
+
+  .bx-viewport {
+    //margin: 50px 50px 50px 50px;
+  }
+
+  .bx-wrapper {
+    margin-bottom: 0;
+  }
+
+  .bx-wrapper .bx-controls-direction .bx-prev {
+    display: none;
+  }
+
+  .bx-wrapper .bx-controls-direction .bx-next {
+    display: none;
+  }
+}
