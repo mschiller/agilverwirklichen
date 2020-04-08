@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_07_154907) do
+ActiveRecord::Schema.define(version: 2020_04_08_053419) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -214,6 +214,14 @@ ActiveRecord::Schema.define(version: 2020_04_07_154907) do
     t.index ["is_published"], name: "index_comfy_cms_translations_on_is_published"
     t.index ["locale"], name: "index_comfy_cms_translations_on_locale"
     t.index ["page_id"], name: "index_comfy_cms_translations_on_page_id"
+  end
+
+  create_table "conferences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "room"
+    t.string "name"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "friendly_id_slugs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

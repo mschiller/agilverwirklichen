@@ -1,0 +1,42 @@
+h1 Listing conferences
+
+.left_column
+  div#meet
+
+.right_column
+  table
+    thead
+      tr
+        th Room
+        th Name
+        th Password
+        th
+        th
+        th
+
+    tbody
+      - @conferences.each do |conference|
+        tr
+          td = conference.room
+          td = conference.name
+          td = conference.password
+          td = link_to 'Show', conference
+          td = link_to 'Edit', edit_conference_path(conference)
+          td = link_to 'Destroy', conference, data: { confirm: 'Are you sure?' }, method: :delete
+
+  br
+
+  p= link_to 'New Conference', new_conference_path
+
+  br
+  br
+
+  p= link_to "Start Meeting", '#', id: 'js-start-conference'
+  p= link_to "Auflegen", '#', id: 'js-stop-conference'
+  p= link_to "Toggle Chat", '#', id: 'js-toggle-chat'
+  p= link_to "Bildschirm teilen", '#', id: 'js-share-screen'
+
+  br
+  br
+
+= javascript_pack_tag 'conferences'

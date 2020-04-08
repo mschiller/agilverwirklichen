@@ -1,0 +1,52 @@
+// external iframe api
+//script src='https://meet.jit.si/external_api.js'
+
+// Here you can access Jitsi Meet API trough the ```JitsiMeetJS``` global object.
+//script src="https://meet.jit.si/libs/lib-jitsi-meet.min.js"
+
+
+//import React, { useState } from 'react'
+
+import JitsiMeetExternalAPI from '../javascripts/jitsi/external_api';
+
+class Conference {
+    constructor(domain) {
+        this.api = undefined;
+        this.domain = "meet.agil-verwirklichen.de";
+        this.options = {
+          roomName: "X",
+          width: "100%",
+          height: 500,
+          parentNode: document.querySelector("#meet"),
+          configOverwrite: {},
+          interfaceConfigOverwrite: {
+          filmStripOnly: false
+          },
+          userInfo: {
+            email: 'michael.schiller@gmx.de'
+          }
+        }
+
+        document.getElementById('js-start-conference').addEventListener('click', ()=>{
+            this.start(this.domain);
+        });
+        document.getElementById('js-stop-conference').addEventListener('click', ()=>{
+            this.api.executeCommand('hangup');
+        });
+        document.getElementById('js-toggle-chat').addEventListener('click', ()=>{
+            this.api.executeCommand('toggleChat');
+        });
+        document.getElementById('js-share-screen').addEventListener('click', ()=>{
+            this.api.executeCommand('toggleShareScreen');
+        });
+    }
+
+    start(domain) {
+      this.api = new JitsiMeetExternalAPI(domain, this.options);
+    }
+}
+
+//const conference = new Conference();
+//conference.start("meet.agil-verwirklichen.de");
+
+export default (new Conference);

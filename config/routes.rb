@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get "/kontakt", :to => "contact#new", :as => "contact"
   post "/kontakt", :to => "contact#create"
 
+  resources :conferences
+  
   authenticate :user do
     resources :profiles, only: [:show, :update] do
       match :change_password, via: [:get, :put]
