@@ -1,7 +1,7 @@
 #autohide
   #header_content
     a[href="/"]
-      = image_pack_tag('media/images/logo.png', alt: Figaro.env.app_header, class: :logo)
+      = image_pack_tag('media/images/logo.svg', alt: Figaro.env.app_header, class: :logo)
 
     - if !is_mobile_device?
       ul#head_navigation.hover_menu.js-hover_menu.hide_on_tablet_and_mobile
