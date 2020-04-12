@@ -28,6 +28,10 @@
   position: relative;
 }
 
+ul:not(.nolist) li {
+  padding-left: 0;
+}
+
 .vertical-align-wrapper {
   display: table;
   overflow: hidden;
@@ -37,7 +41,6 @@
     display: table-cell;
     vertical-align: middle;
     font-size: 2.2rem;
-    padding: 20px;
 
     @include breakpoint($break-medium) {
       font-size: 2.6rem;
