@@ -1,4 +1,4 @@
-$bottom-nav-icon-font-size: 26px !default;
+$bottom-nav-icon-font-size: 24px !default;
 $bottom-nav-icon-margin-bottom: 8px !default;
 $bottom-nav-label-font-size-inactive: 12px !default;
 $bottom-nav-label-font-size-active: 12px !default;
@@ -7,4 +7,8 @@ $bottom-nav-label-font-size-active: 12px !default;
 
 .bottom-nav {
   @include bottom-nav($background-color: #ffffff, $active-color: #155c8f, $inactive-color: gray, $hide-inactive-labels: false);
+}
+
+.bottom-nav__action--active {
+  padding-top: 8px;
 }
