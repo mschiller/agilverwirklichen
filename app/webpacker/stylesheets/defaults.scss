@@ -142,18 +142,6 @@ main {
   }
 }
 
-a,
-a:link,
-a:visited {
-  outline: none 0;
-  color: $link_color;
-  text-decoration: none;
-}
-
-a:hover {
-  color: $link_hover_color;
-}
-
 blockquote {
   background-color: #f9f9f9;
   border-left: 6px solid $primary_calltoaction_border !important;

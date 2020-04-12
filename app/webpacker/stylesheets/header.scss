@@ -11,30 +11,6 @@
     height: $header_height;
   }
 
-  .toggle-mobile-menu {
-    position: relative;
-    top: 15px;
-    right: 15px;
-    display: block;
-    float: right;
-
-    @include breakpoint($break-large) {
-      display: none;
-    }
-
-    a {
-      color: $header_text_color;
-    }
-
-    .fa-bars {
-      &:before {
-        font-size: 2.6rem;
-        cursor: pointer;
-        margin-top: 1rem;
-      }
-    }
-  }
-
   #header_content {
     text-align: center;
 
@@ -44,9 +20,8 @@
 
     .logo {
       height: 55px;
-      margin: 5px;
       width: auto;
-      margin: 8px 5px 5px 40px;
+      margin: 8px 0 5px 0;
 
       @include breakpoint($break-large) {
         text-align: left;
@@ -169,37 +144,6 @@
             }
           }
         }
-      }
-    }
-  }
-
-  #main_navigation {
-    background-color: white;
-    border-bottom: 2px solid $header_background;
-
-    list-style: none;
-    padding: 1em;
-    display: none;
-    line-height: 2.2em;
-
-    @include breakpoint($break-large) {
-      display: block;
-      padding: 0 1em 0;
-      height: 2.5em;
-    }
-
-    a {
-      color: $header_text_color;
-      padding-right: 15px;
-    }
-
-    li.entry {
-      &.active {
-        font-weight: bold;
-      }
-
-      @include breakpoint($break-large) {
-        float: left;
       }
     }
   }

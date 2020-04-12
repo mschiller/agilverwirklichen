@@ -1,0 +1,8 @@
+@import '~material-bottom-nav';
+
+$bottom-nav-action-horizontal-margin: 4px; // reduce the horizontal gutter between actions
+$bottom-nav-icon-font-size: 20px; // increase the icon size
+
+.bottom-nav {
+  @include bottom-nav($background-color: #ffffff, $active-color: #155c8f, $inactive-color: gray, $hide-inactive-labels: false);
+}

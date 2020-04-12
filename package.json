@@ -18,6 +18,7 @@
     "js-cookie": "^2.2.0",
     "lazyload": "^2.0.0-beta.2",
     "leaflet": "^1.4.0",
+    "material-bottom-nav": "^1.0.6",
     "material-icons": "^0.3.0",
     "materialize-css": "^1.0.0",
     "materialize-loader": "^3.0.1",
