@@ -6,8 +6,6 @@
         - n.item page.label, proc{ page.full_path }, icon: cms_fragment_content(:nav_item_icon, page), highlights_on: /^#{page.full_path}/
     - n.item "Blog", "/blog", icon: :blog
     - n.item "Kontakt", "/kontakt", icon: :'envelope'
-    - n.item "CMS", "/cms", icon: :cog, link_html: {target: '_blank'}
-    - n.item "Admin", "/admin", icon: :cog, link_html: {target: '_blank'}
     - if current_user
       - n.item t('navigation.profile'), proc{ main_app.profile_path(current_user) }, icon: :user, highlights_on: /^\/profile/
     - else
