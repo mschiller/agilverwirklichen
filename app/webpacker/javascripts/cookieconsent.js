@@ -35,7 +35,8 @@ window.addEventListener("load", function () {
         "background": "#4b81e8"
       }
     },
-    "position": "bottom-left",
+    "theme": "edgeless",
+    "position": "top",
     "type": "opt-in",
     "content": {
       "message": "Diese Webseite verwendet Cookies um Ihnen die bestmögliche User Experience zu bieten.",
