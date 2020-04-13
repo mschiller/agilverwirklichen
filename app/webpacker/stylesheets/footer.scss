@@ -1,8 +1,12 @@
 #footer {
-  padding: 20px;
+  padding: 20px 20px 70px 20px;
   font-family: $text_font_family;
   background-color: $footer_background_color;
   color: $footer_text_color;
+
+  @include breakpoint($break-large) {
+    padding: 20px;
+  }
 
   h4 {
     font-family: $header_font_family;
