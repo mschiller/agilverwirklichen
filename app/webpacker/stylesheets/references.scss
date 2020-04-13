@@ -1,5 +1,5 @@
 #references {
-  border: 1px solid darkgray;
+  border: 1px solid #e5e4e3;
   padding: 20px 20px 0 20px;
 
   .bx-wrapper {
@@ -12,5 +12,14 @@
 
   .bx-wrapper .bx-controls-direction .bx-next {
     display: none;
+  }
+
+  p {
+    margin-top: 5px;
+  }
+
+  img {
+    float: left;
+    margin-right: 20px;
   }
 }

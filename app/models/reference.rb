@@ -1,16 +1,17 @@
 class Reference < ApplicationRecord
-  im_config = "-strip -interlace Plane -quality 80" # -posterize 3
+  has_one_attached :photo
+  attr_accessor :remove_photo
 
-  has_attached_file :photo, styles: { small: "48x48<", medium: "250x250<", large: "500x500<" },
-                            default_url: "default_images/:style/photo.jpg", :convert_options => { small: im_config, medium: im_config, large: im_config, huge: im_config }
+  validates :photo, attached: true, content_type: [:png, :jpg, :jpeg],
+                    size: { less_than: 10.megabytes, message: "hat nicht die passende Größe, da es größer als 10 MB ist" },
+                    dimension: { width: { min: 150, max: 6000 },
+                                 height: { min: 150, max: 6000 }, message: "hat nicht die passende Größe von 150px bis 6000px" }
 
-  attr_accessor :delete_photo
+  after_save do
+    photo.purge if remove_photo == "1"
+  end
 
-  before_save { self.photo = nil if self.delete_photo == "1" }
   before_save { self.released_at = DateTime.now if self.released_at == nil }
-
-  validates_attachment_size :photo, less_than: 5.megabytes
-  validates_attachment_content_type :photo, content_type: ["image/jpeg", "image/png"]
 
   scope :live, -> { where(live: true) }
 end

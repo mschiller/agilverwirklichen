@@ -26,7 +26,7 @@ ActiveAdmin.register Reference do
       f.input :html
       f.inputs "Upload" do
         f.input :photo, as: :file
-        f.input :delete_photo, as: :boolean
+        f.input :remove_photo, as: :boolean
       end
     end
     f.actions
