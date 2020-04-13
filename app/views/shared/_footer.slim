@@ -1,19 +1,27 @@
-.segment
-  h4 Links
-  ul.nolist
-    - ::Comfy::Cms::Page.root.children.published.each do |page|
-      - if cms_fragment_content(:footer_nav_item, page) == true
-        li= link_to page.full_path do
-          i.fa(class="fa-#{cms_fragment_content(:nav_item_icon, page).presence || "angle-right"}")
-          =< page.label
-    - if current_user
-      li= link_to main_app.profile_path(current_user) do
-        i.fa.fa-user
-        =< t('navigation.profile')
-    - else
-      li= link_to new_session_path(User)
-        i.fa.fa-sign-in-alt
-        =< t('navigation.login')
+- cache ['footer-links-segment', get_last_updated_at_for(::Comfy::Cms::Page)] do
+  .segment
+    h4 Links
+    ul.nolist
+      - ::Comfy::Cms::Page.root.children.published.each do |page|
+        - if cms_fragment_content(:footer_nav_item, page) == true
+          li= link_to page.full_path do
+            i.fa(class="fa-#{cms_fragment_content(:nav_item_icon, page).presence || "angle-right"}")
+            =< page.label
+            - if page.children.size > 0
+              ul.nolist
+                - page.children.published.each do |child|
+                  li= link_to child.full_path do
+                    i.fa(class="fa-#{cms_fragment_content(:nav_item_icon, child).presence || "angle-right"}")
+                    =< child.label
+
+      - if current_user
+        li= link_to main_app.profile_path(current_user) do
+          i.fa.fa-user
+          =< t('navigation.profile')
+      - else
+        li= link_to new_session_path(User)
+          i.fa.fa-sign-in-alt
+          =< t('navigation.login')
 
 = cms_snippet_content('footer', @cms_site).html_safe
 
