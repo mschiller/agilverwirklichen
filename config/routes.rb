@@ -13,13 +13,11 @@ Rails.application.routes.draw do
   get "/blog-post/the-next-big-thing-autonomous-self-organized-units-2/" => redirect("/blog/2017/10/the-next-big-thing-autonomous-self-organized-units-2")
   get "/blog-post/the-next-big-thing-autonomous-self-organized-units-1/" => redirect("/blog/2017/9/the-next-big-thing-autonomous-self-organized-units-1")
 
-  get "/news/feed", to: "feeds#news", defaults: { format: "atom" }, as: "newsfeed"
-
   get "/kontakt", :to => "contact#new", :as => "contact"
   post "/kontakt", :to => "contact#create"
 
   resources :conferences
-  
+
   authenticate :user do
     resources :profiles, only: [:show, :update] do
       match :change_password, via: [:get, :put]

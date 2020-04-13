@@ -11,3 +11,4 @@ head
   = yield :head
   = stylesheet_pack_tag '_application'
   = cms_snippet_content("header_includes").html_safe
+  = auto_discovery_link_tag :rss, comfy_blog_posts_url(:format => :rss)
