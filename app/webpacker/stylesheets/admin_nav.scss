@@ -1,13 +1,16 @@
 .admin_nav {
   position: fixed;
   left: 0;
-  top: 200px;
+  top: 100px;
   height: auto;
-  width: 120px;
+  width: 100px;
   border: 1px solid gray;
+  border-left: 0;
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;
   background-color: lemonchiffon;
 
   li {
-    padding-left: 20px;
+    padding-left: 10px;
   }
 }
