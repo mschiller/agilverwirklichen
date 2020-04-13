@@ -1,8 +1,9 @@
 - if is_mobile_device?
-  = semantic_navigation :primary, builder: Navigasmic::Builder::BottomNavBuilder do |n|
-    - n.item "Start", "/", icon: :home
-    - ::Comfy::Cms::Page.root.children.published.each do |page|
-      - if cms_fragment_content(:nav_item, page) == true
-        - n.item page.label, proc{ page.full_path }, icon: cms_fragment_content(:nav_item_icon, page), highlights_on: /^#{page.full_path}/
-    - n.item "Blog", "/blog", icon: :blog
-    - n.item "Kontakt", "/kontakt", icon: :envelope
+  - cache ['bottom-nav-mobile', get_last_updated_at_for(::Comfy::Cms::Page)] do
+    = semantic_navigation :primary, builder: Navigasmic::Builder::BottomNavBuilder do |n|
+      - n.item "Start", "/", icon: :home
+      - ::Comfy::Cms::Page.root.children.published.each do |page|
+        - if cms_fragment_content(:nav_item, page) == true
+          - n.item page.label, proc{ page.full_path }, icon: cms_fragment_content(:nav_item_icon, page), highlights_on: /^#{page.full_path}/
+      - n.item "Blog", "/blog", icon: :blog
+      - n.item "Kontakt", "/kontakt", icon: :envelope
