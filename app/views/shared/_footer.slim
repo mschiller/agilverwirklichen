@@ -4,7 +4,7 @@
     - ::Comfy::Cms::Page.root.children.published.each do |page|
       - if cms_fragment_content(:footer_nav_item, page) == true
         li= link_to page.full_path do
-          i.fa(class="fa-#{cms_fragment_content(:nav_item_icon, page) || "angle-right"}")
+          i.fa(class="fa-#{cms_fragment_content(:nav_item_icon, page).presence || "angle-right"}")
           =< page.label
     - if current_user
       li= link_to main_app.profile_path(current_user) do
