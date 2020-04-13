@@ -5,5 +5,4 @@
       - if cms_fragment_content(:nav_item, page) == true
         - n.item page.label, proc{ page.full_path }, icon: cms_fragment_content(:nav_item_icon, page), highlights_on: /^#{page.full_path}/
     - n.item "Blog", "/blog", icon: :blog
-    - n.item "Meet", "https://meet.agil-verwirklichen.de", icon: :video, target: "_blank"
     - n.item "Kontakt", "/kontakt", icon: :envelope

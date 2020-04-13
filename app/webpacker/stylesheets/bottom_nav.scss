@@ -12,3 +12,7 @@ $bottom-nav-label-font-size-active: 12px !default;
 .bottom-nav__action--active {
   padding-top: 8px;
 }
+
+.bottom-nav__action:not(:last-child) {
+  margin-right: 0;
+}
