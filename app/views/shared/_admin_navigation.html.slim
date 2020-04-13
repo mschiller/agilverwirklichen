@@ -1,0 +1,9 @@
+- if user_signed_in? and current_user.admin?
+  ul.admin_nav.nolist
+    li= link_to '/cms', target: '_blank' do
+      i.fa.fa-wrench
+      =< t('navigation.cms')
+    li= link_to '/admin', target: '_blank' do
+      i.fa.fa-wrench
+      =< t('navigation.admin')
+    = yield :admin_menu
