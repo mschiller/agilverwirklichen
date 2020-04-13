@@ -21,12 +21,16 @@
     .fa {
       font-family: 'Font Awesome 5 Brands';
       font-weight: 900;
-      padding:10px 9px;
-      -o-transition:.5s;
-      -ms-transition:.5s;
-      -moz-transition:.5s;
-      -webkit-transition:.5s;
+      padding: 10px 9px;
+      -o-transition: .5s;
+      -ms-transition: .5s;
+      -moz-transition: .5s;
+      -webkit-transition: .5s;
       transition: .5s;
+
+      &.default {
+        font-family: FontAwesome;
+      }
     }
   }
 }
@@ -34,21 +38,27 @@
 .fa-facebook:hover {
   background-color: #3d5b99;
 }
+
 .fa-twitter:hover {
   background-color: #00aced;
 }
+
 .fa-rss:hover {
   background-color: #eb8231;
 }
+
 .fa-youtube:hover {
   background-color: #e64a41;
 }
+
 .fa-linkedin:hover {
   background-color: #0073a4;
 }
+
 .fa-google-plus:hover {
   background-color: #e25714;
 }
+
 .fa-envelope-o:hover {
   background-color: $primary_calltoaction_background;
 }
