@@ -1,5 +1,6 @@
 section.post
   .page-title
+    = cell(:breadcrumb).(:show, title: @cms_post.title)
     h1 = title @cms_post.title
 
   p.header

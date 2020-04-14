@@ -1,16 +1,15 @@
-class ReferencesCell < Cell::ViewModel
+class BreadcrumbCell < Cell::ViewModel
   include ActionController::MobileFu::InstanceMethods
-  include PictureTag::ViewHelpers
   include ApplicationHelper
   include CacheHelper
   include Escaped
 
   cache :show, expires_in: ::Rails.configuration.cache_default_time_in_minutes.to_i.minutes do
-    ["references_cell", get_last_updated_at_for(Reference)]
+    ["breadcrumb_cell", request.path, get_last_updated_at_for(::Comfy::Cms::Page)]
   end
 
-  def show
-    @references = Reference.live
+  def show(options = {})
+    @title = options[:title]
     render
   end
 end

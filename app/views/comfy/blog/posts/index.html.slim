@@ -1,11 +1,12 @@
 section.page-title
+    = cell(:breadcrumb).(:show, title: 'Blog')
     h2 = title 'Blog'
 
 section.blog
   .left_column
       - @blog_posts.each do |post|
         .post
-          h2 = link_to post.title, comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug)
+          h3 = link_to post.title, comfy_blog_post_path(@cms_site.path, post.year, post.month, post.slug)
           .date
             =' post.published_at.to_formatted_s(:long)
             | Tags: 

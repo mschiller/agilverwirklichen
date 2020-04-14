@@ -1,0 +1,14 @@
+- if !is_mobile_device?
+  - breadcrumb = []
+  - page_links = []
+  - if cms_page = x = ::Comfy::Cms::Page.where(slug: request.path.split('/').last).first
+    - while x.parent
+      - page_links << link_to(x.parent.label, x.parent.full_path)
+      - x = x.parent
+    - breadcrumb += page_links.reverse
+    - breadcrumb << cms_page.label
+  - else
+    - start_page = ::Comfy::Cms::Page.root
+    - breadcrumb << link_to(start_page.label, start_page.root.full_path)
+    - breadcrumb << @title
+  .breadcrumb= breadcrumb.join(' / ').html_safe
