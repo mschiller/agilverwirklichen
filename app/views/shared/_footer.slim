@@ -1,4 +1,4 @@
-- cache ['footer-links-segment', get_last_updated_at_for(::Comfy::Cms::Page)] do
+- cache ['footer-links-segment', get_last_updated_at_for(::Comfy::Cms::Page), get_last_updated_at_for(::Comfy::Cms::Snippet)] do
   .segment
     h4 Links
     ul.nolist
@@ -23,7 +23,7 @@
           i.fa.fa-sign-in-alt
           =< t('navigation.login')
 
-= cms_snippet_content('footer', @cms_site).html_safe
+  = cms_snippet_content('footer', @cms_site).html_safe
 
 .float_right
   .segment
