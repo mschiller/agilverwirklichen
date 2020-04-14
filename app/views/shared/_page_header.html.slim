@@ -2,14 +2,15 @@
   #header_content
     a[href="/"]= image_pack_tag('media/images/logo.svg', alt: Figaro.env.app_header, class: :logo)
     - if !is_mobile_device?
-      ul#head_navigation.hover_menu.js-hover_menu.hide_on_tablet_and_mobile
-        = cms_snippet_content('main_navbar').html_safe
-        - if user_signed_in?
-          li.nolist.entry= link_to main_app.profile_path(current_user), rel: :nofollow do
-            i.fa.fa-user
-        - else
-          li.nolist.entry= link_to main_app.new_user_session_path, rel: :nofollow do
-            i.fa.fa-user
-    
+      - cache ['page_header_desktop', get_last_updated_at_for(::Comfy::Cms::Snippet)] do
+        ul#head_navigation.hover_menu.js-hover_menu.hide_on_tablet_and_mobile
+          = cms_snippet_content('main_navbar').html_safe
+          - if user_signed_in?
+            li.nolist.entry= link_to main_app.profile_path(current_user), rel: :nofollow do
+              i.fa.fa-user
+          - else
+            li.nolist.entry= link_to main_app.new_user_session_path, rel: :nofollow do
+              i.fa.fa-user
+      
   .clear
 = render partial: 'shared/flash'
