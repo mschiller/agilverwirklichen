@@ -2,9 +2,49 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 
+@import '../stylesheets/constants';
+
 @mixin kill-mobile-zoom {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: none;
+}
+
+#start_background {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 15%;
+  left: 0;
+
+  h1 {
+    color: #ffffff;
+  }
+
+  .btn,
+  a.btn,
+  a.btn:hover,
+  a.btn:active,
+  a.btn.btn.active,
+  a.btn:visited,
+  a.btn:focus {
+    background-color: $primary_calltoaction_background;
+    background-repeat: no-repeat;
+    border-color: $primary_calltoaction_border;
+    border-style: solid;
+    border-width: 1px;
+    color: $primary_calltoaction_color;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    padding: 25px 40px;
+    text-decoration: none;
+    margin-right: 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+  }
 }
 
 main {

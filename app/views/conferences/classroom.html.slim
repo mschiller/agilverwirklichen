@@ -1,6 +1,15 @@
 .left_column
   div#meet
 
+  #start_background
+     h1 Willkommen, Klasse 2b!
+     
+     = image_pack_tag('media/images/classroom/background.png')
+
+     p= link_to '#', id: 'js-start-conference-0', class: 'btn' do
+        i.fa.fa-dog
+        ' Gehe in den Klassenraum
+
 .right_column
   h1 Klasse 2b
 
@@ -40,6 +49,6 @@
   
   //p= link_to "Bildschirm teilen", '#', id: 'js-share-screen'
 
-  = image_pack_tag('media/images/hund.png')
+  = image_pack_tag('media/images/classroom/dog.png')
 
 = javascript_pack_tag 'conferences'

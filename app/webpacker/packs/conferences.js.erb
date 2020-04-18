@@ -29,18 +29,22 @@ class Conference {
 
         document.getElementById('js-start-conference-0').addEventListener('click', ()=>{
             this.close()
+            document.getElementById("start_background").style.display="none"
             this.start(this.domain, "Klassenraum");
         });
         document.getElementById('js-start-conference-1').addEventListener('click', ()=>{
             this.close()
+            document.getElementById("start_background").style.display="none"
             this.start(this.domain, 'Gruppe 1');
         });
         document.getElementById('js-start-conference-2').addEventListener('click', ()=>{
             this.close()
+            document.getElementById("start_background").style.display="none"
             this.start(this.domain, 'Gruppe 2');
         });
         document.getElementById('js-start-conference-3').addEventListener('click', ()=>{
             this.close()
+            document.getElementById("start_background").style.display="none"
             this.start(this.domain, 'Gruppe 3');
         });
         document.getElementById('js-stop-conference').addEventListener('click', ()=>{
@@ -58,17 +62,33 @@ class Conference {
     start(domain, room) {
       this.options.roomName = room + ' Klasse 2b ' + (new Date(Date.now())).toLocaleDateString();
       this.api = new JitsiMeetExternalAPI(domain, this.options);
+
+      //api.executeCommand('displayName', 'Customer');
+      //api.executeCommand('subject', 'Instant Video Session');
+      this.api.executeCommand('toggleChat');
+      this.api.addEventListener('readyToClose',  function(){ 
+        setTimeout(function() {
+          var iframe = document.getElementsByTagName("iframe")[0];
+          if(iframe) {iframe.remove();}
+          document.getElementById("start_background").style.display="block";
+        }, 1000);
+      });
     }
 
     close() {
       if(this.api) {this.api.executeCommand('hangup');}
       var iframe = document.getElementsByTagName("iframe")[0];
       if(iframe) {iframe.remove();}
+      document.getElementById("start_background").style.display="block";
     }
+
 }
 
 // autostart jitsi
-const conference = new Conference();
-conference.start("meet.agil-verwirklichen.de", 'Klassenraum');
+//setTimeout(function() {
+//  const conference = new Conference();
+//  conference.start("meet.agil-verwirklichen.de", 'Klassenraum');
+//}, 3000);
+
 
 export default (new Conference);
