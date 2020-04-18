@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post "/kontakt", :to => "contact#create"
 
   resources :conferences
+  get "/klassenraum", :to => "conferences#classroom"
 
   authenticate :user do
     resources :profiles, only: [:show, :update] do

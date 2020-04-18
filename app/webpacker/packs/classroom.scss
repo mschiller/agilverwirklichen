@@ -1,0 +1,65 @@
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+
+@mixin kill-mobile-zoom {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+}
+
+main#content {
+  padding: 0;
+}
+
+@mixin kill-tap-highlight {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+i {
+  margin-right: 5px;
+}
+
+body {
+  @include kill-mobile-zoom;
+  @include kill-tap-highlight;
+
+    .left_column {
+      position: absolute;
+      top:0;
+      left:0;
+      right: 150px;
+
+      #meet {
+        height: 100vh;
+
+        iframe {
+          height: 90vh !important;
+        }
+      }
+    }
+
+    .right_column {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 100%;
+      border-left: 1px solid gray;
+      background-color: #474747;
+      padding-left: 20px;
+      color: #ffffff;
+
+      a{
+        color: #ffffff;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-decoration: none;
+
+      }
+
+      img {
+        width: 100%;
+        position: absolute;
+        bottom:0;
+      }
+    }
+  }

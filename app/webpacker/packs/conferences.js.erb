@@ -10,11 +10,11 @@
 import JitsiMeetExternalAPI from '../javascripts/jitsi/external_api';
 
 class Conference {
-    constructor(domain) {
+    constructor() {
         this.api = undefined;
         this.domain = "meet.agil-verwirklichen.de";
         this.options = {
-          roomName: "X",
+          roomName: "Klassenraum",
           width: "100%",
           height: 500,
           parentNode: document.querySelector("#meet"),
@@ -27,26 +27,47 @@ class Conference {
           }
         }
 
-        document.getElementById('js-start-conference').addEventListener('click', ()=>{
-            this.start(this.domain);
+        document.getElementById('js-start-conference-0').addEventListener('click', ()=>{
+            this.close()
+            this.start(this.domain, "Klassenraum");
         });
-        document.getElementById('js-stop-conference').addEventListener('click', ()=>{
-            this.api.executeCommand('hangup');
+        document.getElementById('js-start-conference-1').addEventListener('click', ()=>{
+            this.close()
+            this.start(this.domain, 'Gruppe 1');
         });
+        document.getElementById('js-start-conference-2').addEventListener('click', ()=>{
+            this.close()
+            this.start(this.domain, 'Gruppe 2');
+        });
+        document.getElementById('js-start-conference-3').addEventListener('click', ()=>{
+            this.close()
+            this.start(this.domain, 'Gruppe 3');
+        });
+        //document.getElementById('js-stop-conference').addEventListener('click', ()=>{
+        //    this.close()
+        //});
         document.getElementById('js-toggle-chat').addEventListener('click', ()=>{
             this.api.executeCommand('toggleChat');
         });
-        document.getElementById('js-share-screen').addEventListener('click', ()=>{
-            this.api.executeCommand('toggleShareScreen');
-        });
+        //document.getElementById('js-share-screen').addEventListener('click', ()=>{
+        //    this.api.executeCommand('toggleShareScreen');
+        //});
     }
 
-    start(domain) {
+    start(domain, room) {
+      this.options.roomName = room + ' Klasse 2a ' + (new Date(Date.now())).toLocaleDateString();
       this.api = new JitsiMeetExternalAPI(domain, this.options);
+    }
+
+    close() {
+      if(this.api) {this.api.executeCommand('hangup');}
+      var iframe = document.getElementsByTagName("iframe")[0];
+      if(iframe) {iframe.remove();}
     }
 }
 
-//const conference = new Conference();
-//conference.start("meet.agil-verwirklichen.de");
+// autostart jitsi
+const conference = new Conference();
+conference.start("meet.agil-verwirklichen.de", 'Klassenraum');
 
 export default (new Conference);

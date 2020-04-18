@@ -1,0 +1,39 @@
+.left_column
+  div#meet
+
+.right_column
+  h1 Klasse 2a
+
+  br
+
+  p= link_to '#', id: 'js-start-conference-0' do
+     i.fa.fa-angle-double-right
+     ' Klassenraum
+
+  p= link_to '#', id: 'js-start-conference-1' do
+     i.fa.fa-angle-double-right
+     ' Gruppenraum 1
+
+  p= link_to '#', id: 'js-start-conference-2' do
+     i.fa.fa-angle-double-right
+     ' Gruppenraum 2
+
+  p= link_to '#', id: 'js-start-conference-3' do
+     i.fa.fa-angle-double-right
+     ' Gruppenraum 3
+
+  //p= link_to "Auflegen", '#', id: 'js-stop-conference'
+
+  br
+
+  h2 Chat
+  p= link_to "Chat anzeigen", '#', id: 'js-toggle-chat'
+  
+  h2 Links
+  p= link_to "ANTON App", 'https://anton.app/de/', target: '_blank'
+  
+  //p= link_to "Bildschirm teilen", '#', id: 'js-share-screen'
+
+  = image_pack_tag('media/images/hund.png')
+
+= javascript_pack_tag 'conferences'
