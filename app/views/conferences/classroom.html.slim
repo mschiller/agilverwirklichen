@@ -4,33 +4,39 @@
 .right_column
   h1 Klasse 2b
 
-  br
-
   p= link_to '#', id: 'js-start-conference-0' do
-     i.fa.fa-angle-double-right
+     i.fa.fa-ice-cream
      ' Klassenraum
 
   p= link_to '#', id: 'js-start-conference-1' do
-     i.fa.fa-angle-double-right
+     i.fa.fa-chalkboard-teacher
      ' Gruppenraum 1
 
   p= link_to '#', id: 'js-start-conference-2' do
-     i.fa.fa-angle-double-right
+     i.fa.fa-chalkboard-teacher
      ' Gruppenraum 2
 
   p= link_to '#', id: 'js-start-conference-3' do
-     i.fa.fa-angle-double-right
+     i.fa.fa-chalkboard-teacher
      ' Gruppenraum 3
 
-  //p= link_to "Auflegen", '#', id: 'js-stop-conference'
+  p= link_to '#', id: 'js-stop-conference' do
+     i.fa.fa-sign-out-alt
+     ' Beenden
 
   br
 
   h2 Chat
-  p= link_to "Chat anzeigen", '#', id: 'js-toggle-chat'
+
+  p= link_to '#', id: 'js-toggle-chat' do
+     i.fa.fa-comments
+     ' Chat anzeigen
   
   h2 Links
-  p= link_to "ANTON App", 'https://anton.app/de/', target: '_blank'
+
+  p= link_to 'https://anton.app/de/', target: '_blank' do
+    i.fa.fa-angle-double-right
+    ' ANTON App
   
   //p= link_to "Bildschirm teilen", '#', id: 'js-share-screen'
 
