@@ -50,7 +50,11 @@ class Conference {
         document.getElementById('js-stop-conference').addEventListener('click', ()=>{
             this.close()
         });
-        
+        document.getElementById('js-start-conference-start').addEventListener('click', ()=>{
+            this.close()
+            document.getElementById("start_background").style.display="none"
+            this.start(this.domain, "Klassenraum");
+        });
         document.getElementById('js-toggle-chat').addEventListener('click', ()=>{
             this.api.executeCommand('toggleChat');
         });
