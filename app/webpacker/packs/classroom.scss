@@ -45,12 +45,12 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
     display: inline-block;
     line-height: normal;
     text-decoration: none;
-    margin-right: 10px;
     -moz-appearance: none;
     -webkit-appearance: none;
     border-radius: 5px;
     font-size: 1.5em;
-    padding: 5px 10px;
+    padding: 5px 5px;
+    margin: 20px;
 
     @include breakpoint($break-medium) {
       padding: 25px 40px;
