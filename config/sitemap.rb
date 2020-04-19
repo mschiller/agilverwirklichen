@@ -16,4 +16,4 @@ sitemap :site do
   end
 end
 
-ping_with "https://#{host}/sitemap.xml"
+ping_with "https://#{host}/sitemaps/sitemap.xml"
