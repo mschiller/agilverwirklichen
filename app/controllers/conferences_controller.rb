@@ -1,7 +1,7 @@
 class ConferencesController < InheritedResources::Base
   layout "classroom", only: [:classroom]
 
-  before_action :set_classroom_referer, only: [:classroom]
+  before_action :set_referer, only: [:classroom]
   before_action :authenticate_user!, :if => proc {params[:auth] }
 
   def classroom
@@ -13,7 +13,7 @@ class ConferencesController < InheritedResources::Base
     params.require(:conference).permit(:room, :name, :password)
   end
 
-  def set_classroom_referer
-    session[:classroom_referer] = true
+  def set_referer
+    session[:referer] = '/klassenraum'
   end
 end

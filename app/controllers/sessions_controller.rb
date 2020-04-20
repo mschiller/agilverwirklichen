@@ -1,7 +1,7 @@
 class SessionsController < Devise::SessionsController
   def new
 
-    if session[:classroom_referer]
+    if session[:referer]
       @default_user_email = Figaro.env.default_class_email_address
     end
 
