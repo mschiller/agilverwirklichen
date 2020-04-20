@@ -4,11 +4,6 @@ class ProfilesController < ApplicationController
     @user = User.where(slug: params[:id]).first
   end
 
-  # def update
-  #   authorize! :update, current_user
-  #   @user = User.update(user_params)
-  # end
-
   def change_password
     authorize! :update, current_user
     @user = current_user

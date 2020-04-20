@@ -22,6 +22,8 @@ email: ''
 company_name: ''
 with_profiling: ''
 
+default_class_email_address: ''
+
 rapidmail_api_user: ''
 rapidmail_api_password: ''
 

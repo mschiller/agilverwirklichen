@@ -2,11 +2,12 @@
   h2.sub_header.menu
     = t('.header')
   .sub_list
+    = devise_error_messages!
     = simple_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
-      = f.input :email, input_html: { validate: { uniqueness: false } }, autofocus: true
-      = f.input :password, input_html:{ validate: false }
+      = f.input :email, label: !@default_user_email, input_html: { value: @default_user_email, style: "display: #{!!@default_user_email ? 'none' : 'inherit'}", validate: { uniqueness: false } }, autofocus: !@default_user_email
+      = f.input :password, input_html:{ validate: false }, autofocus: !!@default_user_email
       = f.input :remember_me, as: :boolean, input_html: { checked: true, class: 'filled-in' } if devise_mapping.rememberable?
       br
       = f.button :submit, t('devise.sessions.new.sign_in'), class: [:btn, :primary]
 
-= render 'devise/shared/links'
+= render 'devise/shared/links' unless @default_user_email

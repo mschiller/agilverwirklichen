@@ -101,7 +101,7 @@ de:
       locked: Dein Account ist gesperrt.
       not_found_in_database: Diese Anmeldedaten sind ungültig.
       timeout: Deine Sitzung ist abgelaufen, bitte melde Dich erneut an.
-      unauthenticated: Du musst dich anmelden oder registrieren, bevor Du forfahren kannst.
+      unauthenticated: Du musst dich anmelden, bevor Du forfahren kannst.
       unconfirmed: Du musst noch Deinen Account bestätigen, bevor Du forfahren kannst.
     unlocks:
       new:
