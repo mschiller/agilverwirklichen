@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  prepend_before_action :check_captcha, only: [:create]
+  #prepend_before_action :check_captcha, only: [:create]
 
   protected
 
@@ -13,14 +13,15 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
   
-  def check_captcha
-    unless verify_rucaptcha?
-      self.resource = resource_class.new sign_up_params
-      resource.validate
-      set_minimum_password_length
-      respond_with_navigational(resource) { render :new }
-    end 
-  end
+  # def check_captcha
+  #   unless verify_rucaptcha?
+  #     self.resource = resource_class.new sign_up_params
+  #     resource.validate
+  #     set_minimum_password_length
+  #     set_flash_message!(:notice, :check_captcha)
+  #     respond_with_navigational(resource) { render :new }
+  #   end 
+  # end
 
   def sign_up_params
     params.require(:user).permit(:first_name, :surname, :email, :password, :password_confirmation)
