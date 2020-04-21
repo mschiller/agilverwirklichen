@@ -45,7 +45,7 @@ import './libraries/notify';
     // });
 
     return $.notify(msg, {
-      position: 'bottom right',
+      position: 'bottom left',
       className: type,
       clickToHide: true,
       autoHide: autoHide,
