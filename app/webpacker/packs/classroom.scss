@@ -47,10 +47,13 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
     text-decoration: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    border-radius: 5px;
     font-size: 1.5em;
     padding: 5px 5px;
     margin: 20px;
+    border-radius: 5px;
+    box-sizing: content-box;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    overflow: hidden;
 
     @include breakpoint($break-medium) {
       padding: 25px 40px;
