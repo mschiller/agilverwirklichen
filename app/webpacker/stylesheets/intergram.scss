@@ -1,0 +1,8 @@
+#intergramRoot > div {
+  bottom: 80px !important;
+
+  @include breakpoint($break-medium) {
+    bottom: 20px !important;
+  }
+
+}

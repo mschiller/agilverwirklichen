@@ -2,8 +2,24 @@
   -moz-animation: bounce 4s infinite;
   -webkit-animation: bounce 4s infinite;
   animation: bounce 4s infinite;
+  max-width: 100%;
 }
 
 .flash_message {
   display: none;
+}
+
+.notifyjs-corner {
+  bottom: 65px !important;
+  right: 0px !important;
+
+  @include breakpoint($break-medium) {
+    right: auto !important;
+  }
+
+}
+
+.notifyjs-bootstrap-base {
+  padding: 25px 30px 20px 25px !important;
+  white-space: initial !important;
 }
