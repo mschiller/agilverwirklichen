@@ -2,7 +2,7 @@ class ConferencesController < InheritedResources::Base
   layout "classroom", only: [:classroom]
 
   before_action :set_referer, only: [:classroom]
-  before_action :authenticate_user!, :if => proc {params[:auth] }
+  before_action :authenticate_user!
 
   def classroom
   end
