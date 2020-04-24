@@ -597,20 +597,20 @@ class Conference {
       document.getElementById('js-start-conference-1').addEventListener('click', ()=>{
           this.close()
           document.getElementById("start_background").style.display="none"
-          this.start(this.domain, 'Gruppe 1');
-          document.title = "Gruppe 1";
+          this.start(this.domain, 'Gruppenraum 1');
+          document.title = "Gruppenraum 1";
       });
       document.getElementById('js-start-conference-2').addEventListener('click', ()=>{
           this.close()
           document.getElementById("start_background").style.display="none"
-          this.start(this.domain, 'Gruppe 2');
-          document.title = "Gruppe 2";
+          this.start(this.domain, 'Gruppenraum 2');
+          document.title = "Gruppenraum 2";
       });
       document.getElementById('js-start-conference-3').addEventListener('click', ()=>{
           this.close()
           document.getElementById("start_background").style.display="none"
-          this.start(this.domain, 'Gruppe 3');
-          document.title = "Gruppe 3";
+          this.start(this.domain, 'Gruppenraum 3');
+          document.title = "Gruppenraum 3";
       });
       document.getElementById('js-stop-conference').addEventListener('click', ()=>{
           closeFullscreen();
@@ -639,7 +639,7 @@ class Conference {
   }
 
   start(domain, room) {
-    this.options.roomName = room + '-2b-'+ (new Date(Date.now())).toLocaleDateString();
+    this.options.roomName = room + '--Klasse-2b-'+ (new Date(Date.now())).toLocaleDateString();
     this.api = new JitsiMeetExternalAPI(domain, this.options);
     document.getElementById("control").style.display="block";
     openFullscreen();
