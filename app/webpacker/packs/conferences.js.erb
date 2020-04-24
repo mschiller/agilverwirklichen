@@ -1,5 +1,6 @@
 // external iframe api
 //script src='https://meet.jit.si/external_api.js'
+// https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md
 
 // Here you can access Jitsi Meet API trough the ```JitsiMeetJS``` global object.
 //script src="https://meet.jit.si/libs/lib-jitsi-meet.min.js"
@@ -682,12 +683,6 @@ class Conference {
     document.getElementById("control").style.display="none";
   }
 }
-
-// autostart jitsi
-//setTimeout(function() {
-//  const conference = new Conference();
-//  conference.start("meet.agil-verwirklichen.de", 'Klassenraum');
-//}, 3000);
 
 function openFullscreen() {
   var elem = document.documentElement;
