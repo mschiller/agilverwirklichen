@@ -92,6 +92,10 @@ h2 {
   }
 }
 
+#control {
+  display: none;
+}
+
 body {
   @include kill-mobile-zoom;
   @include kill-tap-highlight;

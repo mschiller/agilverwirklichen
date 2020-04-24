@@ -33,12 +33,6 @@
      i.fa.fa-sign-out-alt
      ' Beenden
 
-  h2 Chat
-
-  p= link_to '#', id: 'js-toggle-chat' do
-     i.fa.fa-comments
-     ' Chat anzeigen
-  
   h2 Links
 
   p= link_to 'https://anton.app/de/', target: '_blank' do
@@ -53,7 +47,18 @@
     i.fa.fa-question
     ' Anleitung
   
-  //p= link_to "Bildschirm teilen", '#', id: 'js-share-screen'
+  #control
+     h2 Steuerung
+
+     p= link_to '#', id: 'js-toggle-audio' do
+        i.fa.fa-dog
+        ' Ton EIN/AUS
+
+     p= link_to '#', id: 'js-toggle-chat' do
+        i.fa.fa-comments
+        ' Chat EIN/AUS
+      
+     p= link_to "Bildschirm teilen", '#', id: 'js-share-screen'
 
   = image_pack_tag('media/images/classroom/dog.png')
 
