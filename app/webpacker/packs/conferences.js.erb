@@ -629,6 +629,12 @@ class Conference {
       document.getElementById('js-toggle-audio').addEventListener('click', ()=>{
           this.api.executeCommand('toggleAudio');
       });
+      document.getElementById('js-toggle-video').addEventListener('click', ()=>{
+          this.api.executeCommand('toggleVideo');
+      });
+      document.getElementById('js-toggle-tile-view').addEventListener('click', ()=>{
+          this.api.executeCommand('toggleTileView');
+      });
   }
 
   start(domain, room) {
