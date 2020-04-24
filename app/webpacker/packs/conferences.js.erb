@@ -63,7 +63,7 @@ class Conference {
     }
 
     start(domain, room) {
-      this.options.roomName = room + '-Klasse-2b';
+      this.options.roomName = room + '-2b-'+ (new Date(Date.now())).toLocaleDateString();
       this.api = new JitsiMeetExternalAPI(domain, this.options);
 
       //api.executeCommand('displayName', 'Customer');
