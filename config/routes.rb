@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "/kontakt", :to => "contact#new", :as => "contact"
   post "/kontakt", :to => "contact#create"
 
-  resources :conferences
+  mount Conferences::API => "/"
   get "/klassenraum", :to => "conferences#classroom"
 
   authenticate :user do
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   get "/error_test", to: "errors#test", as: "error_test"
   get "sitemap.xml" => "home#sitemap", format: :xml, as: :sitemap
-
+  
   comfy_route :blog, path: "/blog"
   comfy_route :blog_admin, path: "/blog-admin"
   comfy_route :cms_admin, :path => "/cms"

@@ -61,6 +61,7 @@ gem "skylight"
 gem 'mini_magick'
 gem 'image_processing'
 gem 'httparty', require: nil
+gem 'grape'
 gem 'ckeditor'
 
 group :production, :staging do
