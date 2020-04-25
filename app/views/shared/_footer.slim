@@ -18,6 +18,10 @@
         li= link_to main_app.profile_path(current_user) do
           i.fa.fa-user
           =< t('navigation.profile')
+
+        li= link_to destroy_user_session_path do
+          i.fa.fa-user
+          =<  t('navigation.signed_out')
       - else
         li= link_to new_session_path(User)
           i.fa.fa-sign-in-alt
