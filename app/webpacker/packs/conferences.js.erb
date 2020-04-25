@@ -49,7 +49,7 @@ class Conference {
           VERTICAL_FILMSTRIP: false,
           VIDEO_LAYOUT_FIT: 'both',
           TOOLBAR_BUTTONS: [
-              'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen',
+              'microphone', 'camera', 'closedcaptions', 'desktop', 'fullscreen', 'videobackgroundblur',
               'fodeviceselection', 'hangup', 'profile', 'chat', 'shortcuts', 'tileview', 'mute-everyone'
           ], // , 'raisehand' 'livestreaming', 'etherpad', 'sharedvideo', 'settings',
              // 'videoquality', 'filmstrip', 'invite', 'feedback', 'stats',
@@ -183,15 +183,16 @@ class Conference {
     // util#browser#usesNewGumFlow. The constraints are independent from
     // this config's resolution value. Defaults to requesting an ideal
     // resolution of 720p.
-    // constraints: {
-    //     video: {
-    //         height: {
-    //             ideal: 720,
-    //             max: 720,
-    //             min: 240
-    //         }
-    //     }
-    // },
+
+    constraints: {
+        video: {
+            height: {
+                ideal: 320,
+                max: 480,
+                min: 180
+            }
+        }
+    },
 
     // Enable / disable simulcast support.
     // disableSimulcast: false,
