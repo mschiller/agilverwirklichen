@@ -1,4 +1,4 @@
-- cache ['footer-links-segment', get_last_updated_at_for(::Comfy::Cms::Page), get_last_updated_at_for(::Comfy::Cms::Snippet)] do
+- cache ['footer-links-segment', !!current_user, get_last_updated_at_for(::Comfy::Cms::Page), get_last_updated_at_for(::Comfy::Cms::Snippet)] do
   .segment
     h4 Links
     ul.nolist
