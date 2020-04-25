@@ -19,7 +19,7 @@ class ApplicationController < ApplicationBaseController
   def after_sign_in_path_for(resource)
     session_referer = session[:referer]
     session[:referer] = nil
-    stored_location_for(resource) || session_referer || root_path
+    session_referer || stored_location_for(resource) || root_path
   end
 
   def user_for_paper_trail
