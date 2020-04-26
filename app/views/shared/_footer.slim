@@ -1,4 +1,4 @@
-- cache ['footer-links-segment', !!current_user, get_last_updated_at_for(::Comfy::Cms::Page), get_last_updated_at_for(::Comfy::Cms::Snippet)] do
+- cache_if !current_user, ['footer-links-segment', get_last_updated_at_for(::Comfy::Cms::Page), get_last_updated_at_for(::Comfy::Cms::Snippet)] do
   .segment
     h4 Links
     ul.nolist
@@ -13,7 +13,9 @@
                   li= link_to child.full_path do
                     i.fa(class="fa-#{cms_fragment_content(:nav_item_icon, child).presence || "angle-right"}")
                     =< child.label
-
+  .segment
+    h4 Intern
+    ul.nolist
       - if current_user
         li= link_to main_app.profile_path(current_user) do
           i.fa.fa-user
