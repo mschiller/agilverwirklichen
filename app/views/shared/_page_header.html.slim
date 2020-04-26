@@ -2,7 +2,7 @@
   #header_content
     a[href="/"]= image_pack_tag('media/images/logo.svg', alt: Figaro.env.app_header, class: :logo)
     - if !is_mobile_device?
-      - cache ['page_header_desktop', get_last_updated_at_for(::Comfy::Cms::Snippet)] do
+      - cache_if !user_signed_in?, ['page_header_desktop', get_last_updated_at_for(::Comfy::Cms::Snippet)] do
         ul#head_navigation.hover_menu.js-hover_menu.hide_on_tablet_and_mobile
           = cms_snippet_content('main_navbar').html_safe
           - if user_signed_in?
