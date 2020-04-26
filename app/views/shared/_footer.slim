@@ -21,7 +21,7 @@
           i.fa.fa-user
           =< t('navigation.profile')
 
-        li= link_to destroy_user_session_path do
+        li= link_to destroy_user_session_path, method: :delete do
           i.fa.fa-user
           =<  t('navigation.signed_out')
       - else

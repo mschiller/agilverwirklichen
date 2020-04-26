@@ -448,6 +448,8 @@ GEM
     rails-i18n (6.0.0)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 7)
+    rails-ujs (0.1.0)
+      railties (>= 3.1)
     railties (6.0.2.1)
       actionpack (= 6.0.2.1)
       activesupport (= 6.0.2.1)
@@ -680,6 +682,7 @@ DEPENDENCIES
   rails (= 6.0.2.1)
   rails-assets-picturefill!
   rails-i18n
+  rails-ujs
   redis-rack-cache
   redis-rails
   reform-rails

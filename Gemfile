@@ -10,6 +10,7 @@ gem 'bootsnap', require: false
 gem 'puma'
 gem 'mysql2'
 gem 'webpacker'
+gem 'rails-ujs'
 gem 'jquery-rails'
 gem 'sassc'
 gem 'coffee-rails'

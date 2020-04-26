@@ -26,6 +26,6 @@ h1 = title "#{t('fields.hello')} #{@user.first_name}."
 - if @user == current_user
   hr
   .box-style.actions
-    = link_to t('navigation.signed_out'), destroy_user_session_path, class: [:btn, :secondary], style: 'float:right'
+    = link_to t('navigation.signed_out'), destroy_user_session_path, method: :delete, class: [:btn, :secondary], style: 'float:right'
     = link_to t('devise.profile.edit'), edit_user_registration_path(@user), class: [:btn, :secondary]
     = link_to t('devise.passwords.edit.change_my_password'), profile_change_password_path(@user), class: [:btn, :secondary]
