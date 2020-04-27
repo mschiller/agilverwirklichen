@@ -33,6 +33,10 @@
 }
 
 .simple-editor {
+  trix-toolbar .trix-button-row {
+    justify-content: normal;
+  }
+
   .trix-button--icon-attach,
   .trix-button--icon-code,
   .trix-button-group-spacer,
