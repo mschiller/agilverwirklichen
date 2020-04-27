@@ -10,7 +10,7 @@ class ReferencesCell < Cell::ViewModel
   end
 
   def show
-    @references = Reference.live
+    @references = Reference.where(live: true).all
     render
   end
 end
