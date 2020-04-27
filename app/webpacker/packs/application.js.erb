@@ -1,4 +1,4 @@
-require("@rails/ujs").start()
+require("rails-ujs").start()
 //require("turbolinks").start()
 //require("@rails/activestorage").start()
 //require("channels")
@@ -20,5 +20,6 @@ import '../javascripts/teaser_slider';
 import '../javascripts/references_slider';
 import '../javascripts/buttons';
 import '../javascripts/cookieconsent';
+import './actiontext';
 
 import "<%= File.join(Gem.loaded_specs['picture_tag'].full_gem_path, 'lib', 'assets', 'javascripts', 'picture_tag') %>"

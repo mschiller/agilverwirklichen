@@ -1,4 +1,4 @@
-class ConferencesController < InheritedResources::Base
+class ConferencesController < ApplicationController
   layout "classroom", only: [:classroom]
 
   before_action :set_referer, only: [:classroom]

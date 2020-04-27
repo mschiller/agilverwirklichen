@@ -14,4 +14,21 @@ class Reference < ApplicationRecord
   before_save { self.released_at = DateTime.now if self.released_at == nil }
 
   scope :live, -> { where(live: true) }
+
+  rails_admin do
+
+    field :name
+    field :live
+    field :position
+    field :company
+    field :released_at
+
+    list do
+    end
+
+    edit do
+      field :html
+      field :photo, :active_storage
+    end
+  end
 end

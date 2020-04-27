@@ -22,15 +22,11 @@ module Framework
       end
     end
 
-    config.time_zone = "Berlin"
-
     # Ensuring that ActiveStorage routes are loaded before Comfy's globbing
     # route. Without this file serving routes are inaccessible.
     config.railties_order = [ActiveStorage::Engine, :main_app, :all]
 
     config.middleware.use Rack::Deflater
-
-    #config.active_storage.variant_processor = :vips
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0

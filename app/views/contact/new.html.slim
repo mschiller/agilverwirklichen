@@ -1,16 +1,13 @@
-- content_for :footer do
-  = javascript_include_tag Ckeditor.cdn_url
-
 section.page-title
   = cell(:breadcrumb).(:show, title: 'Kontakt')
   h2=title 'Kontakt'
 section
 .left_column
     .contact_form
-      = simple_form_for @contact_form, url: { action:"create" }, html: { method: :post } do |f|
+      = simple_form_for @contact_form, url: { action:"create" }, html: { method: :post, class: 'simple-editor' } do |f|
         = f.input :email
         = f.input :telephone
-        = f.input :content, label: '', as: :ckeditor, input_html: { ckeditor: { } }
+        = f.input :content, label: '', as: :rich_text_area
         = rucaptcha_input_tag(class: 'form-control', placeholder: 'Captcha hier eingeben')
         = rucaptcha_image_tag(alt: 'Captcha')
         .actions

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => "/ckeditor"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-
-  ActiveAdmin.routes(self)
 
   # redirects old => new
   get "/blog-post/agilitaet-geschwindigkeit/" => redirect("/blog/2018/10/agilitaet-geschwindigkeit")

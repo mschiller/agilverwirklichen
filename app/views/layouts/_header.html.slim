@@ -9,6 +9,6 @@ head
   = favicon_link_pack_tag
   link rel="apple-touch-icon" href=asset_pack_url('media/images/apple-touch-icon.png')
   = yield :head
-  = stylesheet_pack_tag '_application'
+  = stylesheet_pack_tag 'application'
   = cms_snippet_content("header_includes").html_safe
   = auto_discovery_link_tag :rss, comfy_blog_posts_url(:format => :rss)
