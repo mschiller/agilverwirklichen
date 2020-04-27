@@ -34,7 +34,7 @@ class Conferences::API < Grape::API
           TOOLBAR_TIMEOUT: 4000000,
           DISABLE_VIDEO_BACKGROUND: true,
           TOOLBAR_ALWAYS_VISIBLE: true,
-          DEFAULT_REMOTE_DISPLAY_NAME: "Schüler(in)",
+          # DEFAULT_REMOTE_DISPLAY_NAME: "",
           DEFAULT_LOCAL_DISPLAY_NAME: "Ich",
           SHOW_JITSI_WATERMARK: false,
           SHOW_POWERED_BY: false,
@@ -51,11 +51,11 @@ class Conferences::API < Grape::API
           VERTICAL_FILMSTRIP: false,
           VIDEO_LAYOUT_FIT: "both",
           TOOLBAR_BUTTONS: [
-            "microphone", "camera", "closedcaptions", "desktop", "fullscreen", "videobackgroundblur",
+            "microphone", "camera", "closedcaptions", "desktop", "fullscreen", "videobackgroundblur", "videoquality",
             "fodeviceselection", "hangup", "profile", "chat", "shortcuts", "tileview", "mute-everyone",
-          ], #  , 'raisehand' 'livestreaming', 'etherpad', 'sharedvideo', 'settings',
-            #  'videoquality', 'filmstrip', 'invite', 'feedback', 'stats',
-            #  , 'videobackgroundblur', 'download', 'help',
+          ], #  'raisehand' 'livestreaming', 'etherpad', 'sharedvideo', 'settings',
+            #  'filmstrip', 'invite', 'feedback', 'stats',
+            #  'videobackgroundblur', 'download', 'help',
             #  'e2ee', 'recording', 'info', 'calendar'
 
           SETTINGS_SECTIONS: ["devices", "language", "moderator", "profile"],
@@ -144,7 +144,7 @@ class Conferences::API < Grape::API
           #  Audio
 
           #  Disable measuring of audio levels.
-          #  disableAudioLevels: false,
+          disableAudioLevels: true,
           #  audioLevelsInterval: 200,
 
           #  Enabling this will run the lib-jitsi-meet no audio detection module which
@@ -189,7 +189,7 @@ class Conferences::API < Grape::API
               height: {
                 ideal: 320,
                 max: 480,
-                min: 180,
+                min: 240,
               },
             },
           },
@@ -569,12 +569,19 @@ class Conferences::API < Grape::API
         #  callStatsCustomScriptUrl
         #  desktopSharingSources
         #  disableAEC
-        #  disableAGC
+
+        disableAGC: true,
+        disableHPF: true,
+        disableNS: true,
+        enableLipSync: true,
+
         #  disableAP
         #  disableHPF
         #  disableNS
         #  enableLipSync
-        #  enableTalkWhileMuted
+        
+        disableAGC: true,
+
         #  forceJVB121Ratio
         #  hiddenDomain
         #  ignoreStartMuted
