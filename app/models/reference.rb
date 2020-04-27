@@ -15,20 +15,20 @@ class Reference < ApplicationRecord
 
   scope :live, -> { where(live: true) }
 
-  rails_admin do
+  # rails_admin do
 
-    field :name
-    field :live
-    field :position
-    field :company
-    field :released_at
+  #   field :name
+  #   field :live
+  #   field :position
+  #   field :company
+  #   field :released_at
 
-    list do
-    end
+  #   list do
+  #   end
 
-    edit do
-      field :html
-      field :photo, :active_storage
-    end
-  end
+  #   edit do
+  #     field :html
+  #     field :photo, :active_storage
+  #   end
+  # end
 end

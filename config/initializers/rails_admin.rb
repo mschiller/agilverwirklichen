@@ -8,7 +8,7 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_user)
   config.authorize_with :cancancan, Ability
-  config.included_models = %w(Role User Reference)
+  config.included_models = %w(Role ) #User Reference
   #config.audit_with :paper_trail, "User", "PaperTrail::Version"
   config.compact_show_view = true
 
