@@ -16,7 +16,8 @@
     "rails-ujs": "^5.2.4-2",
     "singularitygs": "^1.8.0",
     "smoothscroll-polyfill": "^0.4.4",
-    "trix": "^1.0.0"
+    "trix": "^1.0.0",
+    "webpack": "^4.43.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
