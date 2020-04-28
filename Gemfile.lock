@@ -131,8 +131,6 @@ GEM
       cells (>= 4.0.1, < 6.0.0)
       slim (>= 3.0)
     chronic (0.10.2)
-    ckeditor (5.1.0)
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     coderay (1.1.2)
     coffee-rails (5.0.0)
@@ -160,7 +158,6 @@ GEM
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     debug_inspector (0.0.3)
-    declarative (0.0.10)
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
@@ -173,12 +170,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    disposable (0.4.7)
-      declarative (>= 0.0.9, < 1.0.0)
-      declarative-builder (< 0.2.0)
-      declarative-option (< 0.2.0)
-      representable (>= 2.4.0, <= 3.1.0)
-      uber (< 0.2.0)
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
@@ -467,17 +458,7 @@ GEM
       redis-store (>= 1.2, < 2)
     redis-store (1.8.2)
       redis (>= 4, < 5)
-    reform (2.2.4)
-      disposable (>= 0.4.1)
-      representable (>= 2.4.0, < 3.1.0)
-    reform-rails (0.1.7)
-      activemodel (>= 3.2)
-      reform (>= 2.2.0)
     remotipart (1.4.4)
-    representable (3.0.4)
-      declarative (< 0.1.0)
-      declarative-option (< 0.2.0)
-      uber (< 0.2.0)
     request_store (1.5.0)
       rack (>= 1.4)
     responders (3.0.0)
@@ -619,7 +600,6 @@ DEPENDENCIES
   capistrano3-puma
   cells-rails
   cells-slim
-  ckeditor
   coffee-rails
   comfortable_mexican_sofa
   comfy_blog
@@ -666,7 +646,6 @@ DEPENDENCIES
   rails_admin
   redis-rack-cache
   redis-rails
-  reform-rails
   responders
   rucaptcha
   rufo

@@ -30,21 +30,25 @@ gem 'rails_admin'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'mini_racer'
+
 gem 'active_storage_validations'
 gem 'validates_timeliness'
 gem 'valid_email'
 gem 'url_validator'
+
 gem 'active_attr'
-gem 'reform-rails'
 gem 'whenever'
 gem 'mobile-fu'
 gem 'sanitize'
 gem 'meta-tags'
 gem 'picture_tag'
+
 gem 'redis-rails'
 gem 'rails-assets-picturefill', source: 'https://rails-assets.org'
+
 gem 'comfortable_mexican_sofa'
 gem 'comfy_blog'
+
 gem 'responders'
 gem 'cells-rails'
 gem 'cells-slim'
@@ -62,7 +66,6 @@ gem 'mini_magick'
 gem 'image_processing'
 gem 'httparty', require: nil
 gem 'grape'
-gem 'ckeditor'
 
 group :production, :staging do
   gem 'redis-rack-cache'
