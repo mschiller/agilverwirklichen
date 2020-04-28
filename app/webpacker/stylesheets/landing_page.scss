@@ -52,7 +52,7 @@
 
       #me-caption {
         position: absolute;
-        bottom: 40px;
+        bottom: 20px;
         left: 30px;
         width: 60%;
 
@@ -68,6 +68,12 @@
 
         h2 {
           color: $default_font_color;
+          font-size: 1.2rem;
+
+          @include breakpoint($break-medium) {
+            font-size: 1.4rem;
+          }
+
         }
       }
     }
