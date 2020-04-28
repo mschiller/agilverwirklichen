@@ -10,8 +10,4 @@
           span = [reference.position, reference.company].join(", ")
           br
           span.small = reference.released_at.strftime('%d.%m.%Y')
-          p.italic.small
-            i.fa.fa-angle-double-right
-            ' 
-            ' #{reference.html}
-            i.fa.fa-angle-double-left
+          p.italic.small=reference.html
