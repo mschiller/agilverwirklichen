@@ -7,7 +7,7 @@ section
       = simple_form_for @contact_form, url: { action:"create" }, html: { method: :post, class: 'simple-editor' } do |f|
         = f.input :email
         = f.input :telephone
-        = f.input :content, label: '', as: :rich_text_area
+        = rich_text_area_tag "contact_form[content]",  f.object.content
         = rucaptcha_input_tag(class: 'form-control', placeholder: 'Captcha hier eingeben')
         = rucaptcha_image_tag(alt: 'Captcha')
         .actions
