@@ -2,6 +2,8 @@ class Reference < ApplicationRecord
   has_one_attached :photo
   attr_accessor :remove_photo
 
+  has_rich_text :html
+
   validates :photo, attached: true, content_type: [:png, :jpg, :jpeg],
                     size: { less_than: 10.megabytes, message: "hat nicht die passende Größe, da es größer als 10 MB ist" },
                     dimension: { width: { min: 150, max: 6000 },

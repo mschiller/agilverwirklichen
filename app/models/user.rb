@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   friendly_id :id_and_username, use: :slugged
 
+  has_rich_text :about
+
   has_paper_trail
 
   validates :password, confirmation: true
@@ -14,8 +16,8 @@ class User < ApplicationRecord
   attr_accessor :remove_avatar
 
   validates :avatar, content_type: [:png, :jpg, :jpeg],
-                    size: { less_than: 10.megabytes, message: "hat nicht die passende Größe, da es größer als 10 MB ist" },
-                    dimension: { width: { min: 150, max: 6000 },
+                     size: { less_than: 10.megabytes, message: "hat nicht die passende Größe, da es größer als 10 MB ist" },
+                     dimension: { width: { min: 150, max: 6000 },
                                   height: { min: 150, max: 6000 }, message: "hat nicht die passende Größe von 150px bis 6000px" }
 
   after_save do
@@ -46,7 +48,7 @@ class User < ApplicationRecord
 
     list do
     end
-    
+
     edit do
       field :avatar, :active_storage
       field :about
