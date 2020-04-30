@@ -572,7 +572,7 @@ class Conferences::API < Grape::API
 
             disableAGC: true,
             disableHPF: true,
-            # disableNS: true,
+            disableNS: true,
             enableLipSync: true,
 
           #  disableAP
