@@ -42,6 +42,7 @@ window.addEventListener("load", function () {
       "message": "Diese Webseite verwendet Cookies um Ihnen die bestmögliche User Experience zu bieten.",
       "dismiss": "Alles klar!",
       "deny": "Alle Cookies ablehnen",
+      "allow": "Alle Cookies akzeptieren",
       "link": "Mehr erfahren",
       "href": "https://www.agil-verwirklichen.de/privacy"
     },
