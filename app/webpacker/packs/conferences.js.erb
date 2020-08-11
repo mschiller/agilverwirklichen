@@ -72,7 +72,7 @@ class Conference {
   }
 
   start(domain, roomName) {
-    this.options.roomName = roomName + '--Klasse-2b-'+ (new Date(Date.now())).toLocaleDateString();
+    this.options.roomName = roomName + '--Klasse-3b-'+ (new Date(Date.now())).toLocaleDateString();
     this.api = new JitsiMeetExternalAPI(domain, this.options);
     document.getElementById("control").style.display="block";
     openFullscreen();
