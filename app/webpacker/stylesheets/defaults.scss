@@ -129,16 +129,16 @@ blockquote {
   letter-spacing: 1px;
   padding: 20px 20px 20px 2.5rem !important;
   position: relative;
-}
-
-blockquote::before {
-  content: "\f10d";
-  color: $link_color;
-  font-family: FontAwesome;
-  font-size: 22px;
-  position: absolute;
-  left: 8px;
-  top: 17px;
+    
+  &::before {
+    content: "\f10d";
+    color: $link_color;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 22px;
+    position: absolute;
+    left: 8px;
+    top: 17px;
+  }
 }
 
 hr {
