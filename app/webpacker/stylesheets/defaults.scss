@@ -94,31 +94,6 @@ ul:not(.nolist) {
     list-style-type: none;
     position: relative;
     padding-left: 20px;
-
-    &:before {
-      content: "\f105";
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      text-decoration: inherit;
-      color: gray;
-      padding-right: 0.5em;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    &.check:before {
-      content: "\f00c";
-    }
-
-    &.cross:before {
-      content: "\f00d";
-    }
-
-    &.conf:before {
-      content: "\f013" !important;
-    }
   }
 }
 
