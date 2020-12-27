@@ -20,7 +20,7 @@ set :repo_url, @figaro.env.git_respository
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory
-set :deploy_to, "~/servers/" + @figaro.env.app_name + "/production"
+set :deploy_to, "/home/deploy/servers/" + @figaro.env.app_name + "/production"
 set :shared_path, "#{deploy_to}/shared"
 
 # yarn

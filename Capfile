@@ -16,3 +16,5 @@ require "capistrano/yarn"
 require "whenever/capistrano"
 
 install_plugin Capistrano::Puma  # Default puma tasks
+install_plugin Capistrano::Puma::Daemon  # If you using puma daemonized (not supported in Puma 5+)
+#install_plugin Capistrano::Puma::Systemd  # if you use SystemD 
