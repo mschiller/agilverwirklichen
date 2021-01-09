@@ -14,6 +14,8 @@ end
 set :rbenv_type, :user
 set :rbenv_ruby, "2.6.0"
 
+set :puma_service_unit_name, 'puma.emvellon'
+
 set :application, @figaro.env.app_name
 set :repo_url, @figaro.env.git_respository
 
