@@ -15,9 +15,6 @@ sitemap :site do
     url ['https:', page.url].join(), last_mod: page.updated_at, change_freq: "monthly", priority: 0.5
   end
 
-  url root_url + '/forum/community', last_mod: DateTime.now, change_freq: 'weekly', priority: 0.9
-  url root_url + '/forum/ticketsystem', last_mod: DateTime.now, change_freq: 'weekly', priority: 0.9
-
 end
 
 ping_with "https://#{host}/sitemap.xml"
