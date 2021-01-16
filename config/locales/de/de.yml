@@ -49,6 +49,8 @@ de:
       too_short: "'%{attribute}' ist zu kurz (Das Minimum sind %{count} Zeichen). Bitte geben Sie einen längeren Wert ein"
       taken: "Der verwendete Wert '%{attribute}' wird bereits verwendet. Bitte wählen Sie einen anderen"
       invalid: "Bitte einen korrekten Wert für '%{attribute}' angeben"
+      no_access: "Du hast nicht die Berechtigung, diese Seite aufzurufen."
+      not_logged_in: "Du hast nicht die Berechtigung, diese Seite aufzurufen. Bitte melde dich an."
 
   attributes:
     password: 'Passwort'

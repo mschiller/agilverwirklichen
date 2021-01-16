@@ -89,7 +89,11 @@ module Framework::DeviseAuth
     ability = Ability.new(current_user || User.new)
     return true if ability.can?(:manage, "Cms::Site")
 
-    raise CanCan::AccessDenied
+    if signed_in?
+      redirect_to root_path, alert: I18n.t('errors.messages.no_access')
+    else
+      redirect_to new_user_session_path, alert: I18n.t('errors.messages.not_logged_in')
+    end
   end
 end
 
