@@ -5,7 +5,7 @@ module RescueMethods
     rescue_from Exception do |exception|
       if exception.class == CanCan::AccessDenied
         if signed_in?
-          redirect_to root_path, alert: exception.message
+          redirect_to main_app.root_path, alert: exception.message
         else
           redirect_to new_user_session_path, alert: exception.message
         end

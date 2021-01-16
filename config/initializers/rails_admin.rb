@@ -11,6 +11,7 @@ RailsAdmin.config do |config|
   config.included_models = %w(Role ) #User Reference
   #config.audit_with :paper_trail, "User", "PaperTrail::Version"
   config.compact_show_view = true
+  config.parent_controller = 'ApplicationBaseController' 
 
   PAPER_TRAIL_AUDIT_MODEL = %w()
 
