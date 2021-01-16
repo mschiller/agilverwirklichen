@@ -54,3 +54,4 @@ config/skylight.yml
 yarn-debug.log*
 .yarn-integrity
 output.txt
+.vscode/settings.json
