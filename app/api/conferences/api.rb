@@ -35,47 +35,126 @@ class Conferences::API < Grape::API
             DISABLE_VIDEO_BACKGROUND: true,
             TOOLBAR_ALWAYS_VISIBLE: true,
             # DEFAULT_REMOTE_DISPLAY_NAME: "",
+            DEFAULT_WELCOME_PAGE_LOGO_URL: '',
             DEFAULT_LOCAL_DISPLAY_NAME: "Ich",
+            DEFAULT_LOGO_URL: '',
             SHOW_JITSI_WATERMARK: false,
             SHOW_POWERED_BY: false,
             SHOW_DEEP_LINKING_IMAGE: false,
+            SHOW_PROMOTIONAL_CLOSE_PAGE: false,
             GENERATE_ROOMNAMES_ON_WELCOME_PAGE: true,
             DISPLAY_WELCOME_PAGE_CONTENT: true,
             DISPLAY_WELCOME_PAGE_TOOLBAR_ADDITIONAL_CONTENT: false,
+
+            DISABLE_DOMINANT_SPEAKER_INDICATOR: false,
+            DISABLE_FOCUS_INDICATOR: false,
+            
             APP_NAME: "Klassenraum",
+        
+            AUDIO_LEVEL_PRIMARY_COLOR: 'rgba(255,255,255,0.4)',
+            AUDIO_LEVEL_SECONDARY_COLOR: 'rgba(255,255,255,0.2)',
+
+            DISPLAY_WELCOME_FOOTER: true,
+            DISPLAY_WELCOME_PAGE_ADDITIONAL_CARD: false,
+            DISPLAY_WELCOME_PAGE_CONTENT: false,
+            DISPLAY_WELCOME_PAGE_TOOLBAR_ADDITIONAL_CONTENT: false,
+
+            HIDE_DEEP_LINKING_LOGO: false,
+            HIDE_INVITE_MORE_HEADER: false,
+
+            ENABLE_DIAL_OUT: true,
+            ENABLE_FEEDBACK_ANIMATION: false, # Enables feedback star animation.
+            FILM_STRIP_MAX_HEIGHT: 120,
+            
             NATIVE_APP_NAME: "Jitsi Meet",
+            POLICY_LOGO: false,
             PROVIDER_NAME: "Agil verWirklichen",
             LANG_DETECTION: true, #  Allow i18n to detect the system language
+            LIVE_STREAMING_HELP_LINK: 'https://jitsi.org/live', # Documentation reference for the live streaming feature.
+            # LOCAL_THUMBNAIL_RATIO: 16 / 9, # 16:9
             INVITATION_POWERED_BY: true,
             AUTHENTICATION_ENABLE: false,
-            VERTICAL_FILMSTRIP: false,
+            VERTICAL_FILMSTRIP: true,
             VIDEO_LAYOUT_FIT: "both",
+            TILE_VIEW_MAX_COLUMNS: 5,
             TOOLBAR_BUTTONS: [
-              "microphone", "camera", "closedcaptions", "desktop", "fullscreen", "videobackgroundblur", "videoquality",
-              "fodeviceselection", "hangup", "profile", "chat", "shortcuts", "tileview", "mute-everyone",
-            ], #  'raisehand' 'livestreaming', 'etherpad', 'sharedvideo', 'settings',
+
+            ], 
+            #  'raisehand' 'livestreaming', 'etherpad', 'sharedvideo', 'settings',
             #  'filmstrip', 'invite', 'feedback', 'stats',
             #  'videobackgroundblur', 'download', 'help',
             #  'e2ee', 'recording', 'info', 'calendar'
+            #              "microphone", "camera", "closedcaptions", "desktop", "fullscreen", "videobackgroundblur", "videoquality",
+            #  "fodeviceselection", "hangup", "profile", "chat", "shortcuts", "tileview", "mute-everyone",
 
             SETTINGS_SECTIONS: ["devices", "language", "moderator", "profile"],
+            # [ 'devices', 'language', 'moderator', 'profile', 'calendar' ],
+
+            UNSUPPORTED_BROWSERS: [],
+            OPTIMAL_BROWSERS: [ 'chrome', 'chromium', 'firefox', 'nwjs', 'electron', 'safari' ],
 
             DISABLE_PRESENCE_STATUS: true,
             DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
+            DISABLE_RINGING: false,
+            DISABLE_TRANSCRIPTION_SUBTITLES: false,
+
             RECENT_LIST_ENABLED: false,
+            REMOTE_THUMBNAIL_RATIO: 1, # 1:1
             VIDEO_QUALITY_LABEL_DISABLED: true,
             CONNECTION_INDICATOR_AUTO_HIDE_ENABLED: false,
             CONNECTION_INDICATOR_AUTO_HIDE_TIMEOUT: 5000,
             CONNECTION_INDICATOR_DISABLED: true,
 
-            SHOW_CHROME_EXTENSION_BANNER: true,
+            SHOW_CHROME_EXTENSION_BANNER: false,
             SUPPORT_URL: "https:# www.agil-verwirklichen.de/virtueller-klassenraum/dokumentation",
-            MOBILE_APP_PROMO: true,
+            MOBILE_APP_PROMO: false,
+            # MOBILE_DOWNLOAD_LINK_ANDROID: 'https://play.google.com/store/apps/details?id=org.jitsi.meet',
+            # MOBILE_DOWNLOAD_LINK_F_DROID: 'https://f-droid.org/en/packages/org.jitsi.meet/',
+            # MOBILE_DOWNLOAD_LINK_IOS: 'https://itunes.apple.com/us/app/jitsi-meet/id1165103905',
 
             MAXIMUM_ZOOMING_COEFFICIENT: 1.3,
 
-          # SHOW_BRAND_WATERMARK: true,
-          # BRAND_WATERMARK_LINK: '',
+            # /**
+            # * A UX mode where the last screen share participant is automatically
+            # * pinned. Valid values are the string "remote-only" so remote participants
+            # * get pinned but not local, otherwise any truthy value for all participants,
+            # * and any falsy value to disable the feature.
+            # *
+            # * Note: this mode is experimental and subject to breakage.
+            # */
+            AUTO_PIN_LATEST_SCREEN_SHARE: 'remote-only',
+            SHOW_BRAND_WATERMARK: false,
+            # BRAND_WATERMARK_LINK: '',
+            # JITSI_WATERMARK_LINK: 'https://jitsi.org',
+            # CLOSE_PAGE_GUEST_HINT: false, # A html text to be shown to guests on the close page, false disables it
+
+            # /**
+            # * Specify Firebase dynamic link properties for the mobile apps.
+            # */
+            # // MOBILE_DYNAMIC_LINK: {
+            # //    APN: 'org.jitsi.meet',
+            # //    APP_CODE: 'w2atb',
+            # //    CUSTOM_DOMAIN: undefined,
+            # //    IBI: 'com.atlassian.JitsiMeet.ios',
+            # //    ISI: '1165103905'
+            # // },
+
+            # APP_SCHEME: 'org.jitsi.meet',
+            # ANDROID_APP_PACKAGE: 'org.jitsi.meet',
+            # ENFORCE_NOTIFICATION_AUTO_DISMISS_TIMEOUT: 15000,
+            
+            # // List of undocumented settings
+            # /**
+            # INDICATOR_FONT_SIZES
+            # PHONE_NUMBER_REGEX
+            # */
+
+            # // Allow all above example options to include a trailing comma and
+            # // prevent fear when commenting out the last value.
+            # // eslint-disable-next-line sort-keys
+            # makeJsonParserHappy: 'even if last key had a trailing comma'
+
+            # // No configuration value should follow this line.
           },
           configOverwrite: {
             #  https:# github.com/jitsi/jitsi-meet/blob/master/config.js

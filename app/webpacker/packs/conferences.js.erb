@@ -1,6 +1,6 @@
 // external iframe api
 //script src='https://meet.jit.si/external_api.js'
-// https://github.com/jitsi/jitsi-meet/blob/master/doc/api.md
+// https://jitsi.github.io/handbook/docs/dev-guide/dev-guide-iframe
 
 // Here you can access Jitsi Meet API trough the ```JitsiMeetJS``` global object.
 //script src="https://meet.jit.si/libs/lib-jitsi-meet.min.js"
@@ -21,61 +21,65 @@ class Conference {
           height: 500
         });
 
-      document.getElementById('js-start-conference-0').addEventListener('click', ()=>{
-          this.close()
-          document.getElementById("start_background").style.display="none"
-          this.start(this.domain, "Klassenraum");
-          document.title = "Klassenraum";
-      });
-      document.getElementById('js-start-conference-1').addEventListener('click', ()=>{
-          this.close()
-          document.getElementById("start_background").style.display="none"
-          this.start(this.domain, 'Gruppenraum 1');
-          document.title = "Gruppenraum 1";
-      });
-      document.getElementById('js-start-conference-2').addEventListener('click', ()=>{
-          this.close()
-          document.getElementById("start_background").style.display="none"
-          this.start(this.domain, 'Gruppenraum 2');
-          document.title = "Gruppenraum 2";
-      });
-      document.getElementById('js-start-conference-3').addEventListener('click', ()=>{
-          this.close()
-          document.getElementById("start_background").style.display="none"
-          this.start(this.domain, 'Gruppenraum 3');
-          document.title = "Gruppenraum 3";
-      });
-      document.getElementById('js-stop-conference').addEventListener('click', ()=>{
-          closeFullscreen();
-          this.close()
-      });
-      document.getElementById('js-start-conference-start').addEventListener('click', ()=>{
-          this.close()
-          document.getElementById("start_background").style.display="none"
-          this.start(this.domain, "Klassenraum");
-      });
-      document.getElementById('js-toggle-chat').addEventListener('click', ()=>{
-          this.api.executeCommand('toggleChat');
-      });
-      document.getElementById('js-share-screen').addEventListener('click', ()=>{
-          this.api.executeCommand('toggleShareScreen');
-      });
-      document.getElementById('js-toggle-audio').addEventListener('click', ()=>{
-          this.api.executeCommand('toggleAudio');
-      });
-      document.getElementById('js-toggle-video').addEventListener('click', ()=>{
-          this.api.executeCommand('toggleVideo');
-      });
-      document.getElementById('js-toggle-tile-view').addEventListener('click', ()=>{
-          this.api.executeCommand('toggleTileView');
-      });
+      this.close()
+      this.start(this.domain, "Klassenraum");
+      document.title = "Klassenraum";
+
+      //document.getElementById('js-start-conference-0').addEventListener('click', ()=>{
+      //    this.close()
+      //    document.getElementById("start_background").style.display="none"
+      //    this.start(this.domain, "Klassenraum");
+      //    document.title = "Klassenraum";
+      //});
+      //document.getElementById('js-start-conference-1').addEventListener('click', ()=>{
+      //    this.close()
+      //    document.getElementById("start_background").style.display="none"
+      //    this.start(this.domain, 'Gruppenraum 1');
+      //    document.title = "Gruppenraum 1";
+      //});
+      //document.getElementById('js-start-conference-2').addEventListener('click', ()=>{
+      //    this.close()
+      //    document.getElementById("start_background").style.display="none"
+      //    this.start(this.domain, 'Gruppenraum 2');
+      //    document.title = "Gruppenraum 2";
+      //});
+      //document.getElementById('js-start-conference-3').addEventListener('click', ()=>{
+      //    this.close()
+      //    document.getElementById("start_background").style.display="none"
+      //    this.start(this.domain, 'Gruppenraum 3');
+      //    document.title = "Gruppenraum 3";
+      //});
+      //document.getElementById('js-stop-conference').addEventListener('click', ()=>{
+      //    closeFullscreen();
+      //    this.close()
+      //});
+      //document.getElementById('js-start-conference-start').addEventListener('click', ()=>{
+      //    this.close()
+      //    document.getElementById("start_background").style.display="none"
+      //    this.start(this.domain, "Klassenraum");
+      //});
+      //document.getElementById('js-toggle-chat').addEventListener('click', ()=>{
+      //    this.api.executeCommand('toggleChat');
+      //});
+      //document.getElementById('js-share-screen').addEventListener('click', ()=>{
+      //    this.api.executeCommand('toggleShareScreen');
+      //});
+      //document.getElementById('js-toggle-audio').addEventListener('click', ()=>{
+      //    this.api.executeCommand('toggleAudio');
+      //});
+      //document.getElementById('js-toggle-video').addEventListener('click', ()=>{
+      //    this.api.executeCommand('toggleVideo');
+      //});
+      //document.getElementById('js-toggle-tile-view').addEventListener('click', ()=>{
+      //    this.api.executeCommand('toggleTileView');
+      //});
   }
 
   start(domain, roomName) {
     this.options.roomName = roomName + '--Klasse-3b-'+ (new Date(Date.now())).toLocaleDateString();
     this.api = new JitsiMeetExternalAPI(domain, this.options);
-    document.getElementById("control").style.display="block";
-    openFullscreen();
+    //document.getElementById("control").style.display="block";
+    //openFullscreen();
 
     //api.executeCommand('displayName', 'Customer');
     //api.executeCommand('subject', 'Instant Video Session');
@@ -110,10 +114,10 @@ class Conference {
 
   close() {
     if(this.api) {this.api.executeCommand('hangup');}
-    var iframe = document.getElementsByTagName("iframe")[0];
-    if(iframe) {iframe.remove();}
-    document.getElementById("start_background").style.display="block";
-    document.getElementById("control").style.display="none";
+    //var iframe = document.getElementsByTagName("iframe")[0];
+    //if(iframe) {iframe.remove();}
+    //document.getElementById("start_background").style.display="block";
+    //document.getElementById("control").style.display="none";
   }
 }
 
@@ -159,3 +163,14 @@ function closeFullscreen() {
 }
 
 export default (new Conference);
+
+//document.addEventListener("DOMContentLoaded", function(event) {
+//  var checkExist = setInterval(function() {
+//    if (document.getElementsByClassName('watermark')[0] && document.getElementsByClassName('watermark')[0].length) {
+//        console.log("DOM fully loaded and parsed");
+//        document.getElementsByClassName('watermark')[0].remove();
+//        clearInterval(checkExist);
+//    }
+//  }, 100);
+//});
+
