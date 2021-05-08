@@ -2,17 +2,17 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# This file is the source Rails uses to define your schema when running `rails
-# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_065504) do
+ActiveRecord::Schema.define(version: 2021_05_08_070743) do
 
-  create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "action_text_rich_texts", charset: "latin1", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
     t.string "record_type", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
-  create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_admin_comments", charset: "utf8", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "utf8", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -54,10 +54,17 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
+    t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "comfy_blog_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "active_storage_variant_records", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "comfy_blog_posts", charset: "latin1", force: :cascade do |t|
     t.integer "site_id", null: false
     t.string "title", null: false
     t.string "slug", null: false
@@ -74,7 +81,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["year", "month", "slug"], name: "index_comfy_blog_posts_on_year_and_month_and_slug"
   end
 
-  create_table "comfy_cms_blocks", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "comfy_cms_blocks", id: :integer, charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.integer "blockable_id"
     t.string "identifier"
     t.text "content"
@@ -85,21 +92,21 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["blockable_type"], name: "index_comfy_cms_blocks_on_blockable_type"
   end
 
-  create_table "comfy_cms_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_categories", charset: "utf8", force: :cascade do |t|
     t.integer "site_id", null: false
     t.string "label", null: false
     t.string "categorized_type", null: false
     t.index ["site_id", "categorized_type", "label"], name: "index_cms_categories_on_site_id_and_cat_type_and_label", unique: true
   end
 
-  create_table "comfy_cms_categorizations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_categorizations", charset: "utf8", force: :cascade do |t|
     t.integer "category_id", null: false
     t.string "categorized_type", null: false
     t.integer "categorized_id", null: false
     t.index ["category_id", "categorized_type", "categorized_id"], name: "index_cms_categorizations_on_cat_id_and_catd_type_and_catd_id", unique: true
   end
 
-  create_table "comfy_cms_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_files", charset: "utf8", force: :cascade do |t|
     t.integer "site_id", null: false
     t.string "label", default: "", null: false
     t.text "description"
@@ -109,7 +116,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["site_id", "position"], name: "index_comfy_cms_files_on_site_id_and_position"
   end
 
-  create_table "comfy_cms_fragments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_fragments", charset: "utf8", force: :cascade do |t|
     t.string "record_type"
     t.bigint "record_id"
     t.string "identifier", null: false
@@ -125,7 +132,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["record_type", "record_id"], name: "index_comfy_cms_fragments_on_record_type_and_record_id"
   end
 
-  create_table "comfy_cms_layouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_layouts", charset: "utf8", force: :cascade do |t|
     t.integer "site_id", null: false
     t.integer "parent_id"
     t.string "app_layout"
@@ -141,7 +148,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["site_id", "identifier"], name: "index_comfy_cms_layouts_on_site_id_and_identifier", unique: true
   end
 
-  create_table "comfy_cms_pages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_pages", charset: "utf8", force: :cascade do |t|
     t.integer "site_id", null: false
     t.integer "layout_id"
     t.integer "parent_id"
@@ -160,7 +167,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["site_id", "full_path"], name: "index_comfy_cms_pages_on_site_id_and_full_path"
   end
 
-  create_table "comfy_cms_revisions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_revisions", charset: "utf8", force: :cascade do |t|
     t.string "record_type", null: false
     t.integer "record_id", null: false
     t.text "data", size: :medium
@@ -168,7 +175,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["record_type", "record_id", "created_at"], name: "index_cms_revisions_on_rtype_and_rid_and_created_at"
   end
 
-  create_table "comfy_cms_sites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_sites", charset: "utf8", force: :cascade do |t|
     t.string "label", null: false
     t.string "identifier", null: false
     t.string "hostname", null: false
@@ -179,7 +186,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["hostname"], name: "index_comfy_cms_sites_on_hostname"
   end
 
-  create_table "comfy_cms_snippets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_snippets", charset: "utf8", force: :cascade do |t|
     t.integer "site_id", null: false
     t.string "label", null: false
     t.string "identifier", null: false
@@ -191,7 +198,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position"
   end
 
-  create_table "comfy_cms_translations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comfy_cms_translations", charset: "utf8", force: :cascade do |t|
     t.string "locale", null: false
     t.integer "page_id", null: false
     t.integer "layout_id"
@@ -205,7 +212,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["page_id"], name: "index_comfy_cms_translations_on_page_id"
   end
 
-  create_table "conferences", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "conferences", charset: "latin1", force: :cascade do |t|
     t.string "room"
     t.string "name"
     t.string "password"
@@ -213,7 +220,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "friendly_id_slugs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "friendly_id_slugs", charset: "utf8", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 40
@@ -227,7 +234,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "news", charset: "latin1", force: :cascade do |t|
     t.string "slug"
     t.datetime "start_datetime"
     t.datetime "end_datetime"
@@ -239,25 +246,24 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["slug"], name: "index_news_on_slug", unique: true
   end
 
-  create_table "references", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "references", charset: "latin1", force: :cascade do |t|
     t.string "name"
     t.string "position"
     t.string "company"
     t.boolean "live"
-    t.text "html"
     t.datetime "released_at", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "roles", charset: "utf8", force: :cascade do |t|
     t.string "name"
     t.string "label"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "roles_users", charset: "utf8", force: :cascade do |t|
     t.integer "role_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -267,7 +273,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["user_id"], name: "index_roles_users_on_user_id"
   end
 
-  create_table "teasers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "teasers", charset: "utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.boolean "live"
@@ -280,7 +286,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.datetime "image_updated_at"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -316,7 +322,6 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.datetime "locked_at"
     t.string "first_name"
     t.string "surname"
-    t.text "about"
     t.string "username"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -329,7 +334,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  create_table "versions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "versions", charset: "utf8", force: :cascade do |t|
     t.string "item_type", limit: 191, null: false
     t.integer "item_id", null: false
     t.string "event", null: false
@@ -339,4 +344,5 @@ ActiveRecord::Schema.define(version: 2020_04_16_065504) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end
