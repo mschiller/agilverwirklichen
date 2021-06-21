@@ -7,10 +7,12 @@ $bottom-nav-label-font-size-active: 12px !default;
 
 .bottom-nav {
   @include bottom-nav($background-color: #ffffff, $active-color: #155c8f, $inactive-color: gray, $hide-inactive-labels: false);
+  justify-content: space-around;
+  height: 50px;
 }
 
 .bottom-nav__action--active {
-  padding-top: 8px;
+  //padding-top: 8px;
 }
 
 .bottom-nav__action:not(:last-child) {
