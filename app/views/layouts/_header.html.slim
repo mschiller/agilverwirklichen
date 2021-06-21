@@ -8,7 +8,9 @@ head
   meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=3.0"
   = favicon_link_pack_tag
   link rel="apple-touch-icon" href=asset_pack_url('media/images/apple-touch-icon.png')
-  = yield :head
+  /= turbo_include_tags 
   = stylesheet_pack_tag 'application'
+  = javascript_pack_tag 'application'
   = cms_snippet_content("header_includes").html_safe
+   = yield :head
   = auto_discovery_link_tag :rss, comfy_blog_posts_url(:format => :rss)

@@ -3,15 +3,16 @@ section.page-title
   h2=title 'Kontakt'
 section
 .left_column
-    .contact_form
-      = simple_form_for @contact_form, url: { action:"create" }, html: { method: :post, class: 'simple-editor' } do |f|
-        = f.input :email
-        = f.input :telephone
-        = rich_text_area_tag "contact_form[content]",  f.object.content
-        = rucaptcha_input_tag(class: 'form-control', placeholder: 'Captcha hier eingeben')
-        = rucaptcha_image_tag(alt: 'Captcha')
-        .actions
-          = f.submit I18n.t('message.contact_form.send'), class: 'btn'
+    = turbo_frame_tag "contact" do 
+      .contact_form
+        = simple_form_for @contact_form, url: { action:"create" }, html: { 'data-turbo': "false", method: :post, class: 'simple-editor', data: { "turbo-frame" => "_top" } }, data: { "turbo-frame" => "_top" } do |f|
+          = f.input :email
+          = f.input :telephone
+          = rich_text_area_tag "contact_form[content]",  f.object.content
+          = rucaptcha_input_tag(class: 'form-control', placeholder: 'Captcha hier eingeben')
+          = rucaptcha_image_tag(alt: 'Captcha')
+          .actions
+            = f.submit I18n.t('message.contact_form.send'), class: 'btn'
 
 .right_column
   = cms_snippet_content('contact-right-column', @cms_site).html_safe

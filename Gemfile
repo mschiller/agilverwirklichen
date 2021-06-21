@@ -27,6 +27,7 @@ gem 'rails_admin'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'mini_racer'
+gem 'hotwire-rails'
 
 gem 'active_storage_validations'
 gem 'validates_timeliness'
@@ -63,6 +64,7 @@ gem 'mini_magick'
 gem 'image_processing'
 gem 'httparty', require: nil
 gem 'grape'
+#gem 'solidus'
 
 group :production, :staging do
   gem 'redis-rack-cache'
@@ -91,7 +93,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.1.5', '< 3.2'
   gem 'launchy'
-  gem 'bullet'
+  #gem 'bullet'
   gem 'solargraph'
   gem 'rufo'
   gem 'ed25519'

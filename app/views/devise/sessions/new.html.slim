@@ -3,7 +3,7 @@
     = t('.header')
   .sub_list
     = devise_error_messages!
-    = simple_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
+    = simple_form_for resource, :as => resource_name, :url => session_path(resource_name), html: { 'data-turbo': "false"} do |f|
       - if @default_user_email
         = f.input :email, label: false, input_html: { style: "display: none", value: @default_user_email, validate: { uniqueness: false } }
       - else

@@ -1,6 +1,6 @@
 import 'bxslider/dist/jquery.bxslider';
 
-$(function () {
+$(document).on('turbo:load', function () {
   $('#references .bxslider').bxSlider({
     auto: true,
     pause: 7000,

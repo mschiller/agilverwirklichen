@@ -9,6 +9,7 @@ Rails.application.config.content_security_policy do |p|
   p.object_src  :none
   p.script_src  :self, :https, :unsafe_eval, :unsafe_inline
   p.style_src   :self, :https, :unsafe_inline
+  p.frame_src   :self, :https, 'http://www.loadmill.com'
 
   # Specify URI for violation reports
   # p.report_uri "/csp-violation-report-endpoint"

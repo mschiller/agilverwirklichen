@@ -24,7 +24,7 @@ if (document.cookie.split(';').filter(function (item) {
   }
 }
 
-window.addEventListener("load", function () {
+$(document).on('turbo:load', function () {
   window.cookieconsent.initialise({
     "palette": {
       "popup": {

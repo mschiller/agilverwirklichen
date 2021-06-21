@@ -1,6 +1,6 @@
 import Component from './materialize-component';
 
-(function($) {
+$(document).on('turbo:load', function () {
   'use strict';
 
   let _defaults = {
