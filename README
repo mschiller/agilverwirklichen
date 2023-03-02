@@ -1,0 +1,6 @@
+
+### DB Backup
+
+`ssh deploy@159.69.13.156 "mysqldump -p -u admin emvellon_production" > backup_file_on_your_local_machine.sql`
+
+`mysql -u root -p emvellon_development < backup_file_on_your_local_machine.sql`
